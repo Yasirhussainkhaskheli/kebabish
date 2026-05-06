@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kebabish Original Blackburn | Authentic Asian Cuisine</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --red: #c8220a;
+    --red-bright: #e8350a;
+    --orange: #f5a623;
+    --orange-light: #f7b731;
+    --dark: #111111;
+    --dark-2: #1e1e1e;
+    --dark-3: #2a2a2a;
+    --cream: #fdf6ee;
+    --cream-2: #f5ece0;
+    --text-dark: #1a1a1a;
+    --text-mid: #555;
+    --text-light: #888;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ===================== NAVBAR ===================== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 72px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 42px; height: 42px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .nav-logo-text {
+    display: flex; flex-direction: column; line-height: 1.1;
+  }
+  .nav-logo-text .brand { color: var(--white); font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 1px; }
+  .nav-logo-text .sub { color: var(--orange); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Nunito', sans-serif; }
+
+  .nav-links {
+    display: flex; gap: 4px; align-items: center; list-style: none;
+  }
+  .nav-links li a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+  }
+  .nav-links li a:hover { color: var(--orange); }
+
+  .nav-actions {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .nav-actions a { color: rgba(255,255,255,0.7); font-size: 16px; text-decoration: none; transition: color 0.2s; }
+  .nav-actions a:hover { color: var(--orange); }
+  .nav-order-btn {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 10px 22px !important;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    letter-spacing: 1.5px;
+    display: flex; align-items: center; gap: 8px;
+    transition: background 0.2s !important;
+  }
+  .nav-order-btn:hover { background: var(--red-bright) !important; color: var(--white) !important; }
+
+  /* ===================== HERO SLIDER ===================== */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 620px;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+  }
+  .slide.active { opacity: 1; }
+
+  .slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.08);
+    transition: transform 8s ease;
+  }
+  .slide.active .slide-bg { transform: scale(1); }
+
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 100%);
+  }
+
+  /* Slide 1 */
+  .slide-1 .slide-bg {
+    background-image: url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=1600&q=80');
+  }
+  /* Slide 2 */
+  .slide-2 .slide-bg {
+    background-image: url('https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=1600&q=80');
+  }
+  /* Slide 3 */
+  .slide-3 .slide-bg {
+    background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=80');
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 680px;
+  }
+
+  .slide-tag {
+    display: inline-block;
+    color: var(--orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s 0.3s, transform 0.6s 0.3s;
+  }
+  .slide.active .slide-tag { opacity: 1; transform: translateY(0); }
+
+  .slide-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 90px);
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s 0.5s, transform 0.7s 0.5s;
+  }
+  .slide.active .slide-title { opacity: 1; transform: translateY(0); }
+
+  .slide-title span { color: var(--orange); }
+
+  .slide-desc {
+    color: rgba(255,255,255,0.78);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 420px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s 0.7s, transform 0.7s 0.7s;
+  }
+  .slide.active .slide-desc { opacity: 1; transform: translateY(0); }
+
+  .slide-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: background 0.3s, transform 0.2s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s 0.9s, transform 0.7s 0.9s, background 0.3s;
+  }
+  .slide.active .slide-btn { opacity: 1; transform: translateY(0); }
+  .slide-btn:hover { background: var(--red-bright); }
+
+  /* Price badge */
+  .price-badge {
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110px;
+    height: 110px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    z-index: 3;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    animation: pulse 3s infinite;
+  }
+  .price-badge .label { font-size: 11px; font-weight: 500; color: var(--dark); letter-spacing: 1px; }
+  .price-badge .amount { font-size: 28px; font-weight: 700; color: var(--dark); line-height: 1; }
+
+  @keyframes pulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.04); }
+  }
+
+  /* Slider controls */
+  .slider-controls {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .slider-dot {
+    width: 28px;
+    height: 4px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+  }
+  .slider-dot.active {
+    background: var(--orange);
+    width: 48px;
+  }
+
+  .slider-arrows {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+  }
+  .slider-arrow {
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .slider-arrow:hover { background: var(--red); border-color: var(--red); }
+
+  /* ===================== POPULAR TICKERS ===================== */
+  .popular-strip {
+    background: var(--cream);
+    padding: 40px 40px 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .popular-strip h2 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+  }
+
+  .popular-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .pop-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: center;
+    min-width: 150px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+  }
+  .pop-card:hover { transform: translateY(-6px); box-shadow: 0 10px 35px rgba(0,0,0,0.14); }
+  .pop-card-img {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+    border: 3px solid var(--cream-2);
+    background: var(--cream-2);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .pop-card-img img { width: 100%; height: 100%; object-fit: cover; }
+  .pop-card h3 { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; }
+  .pop-card .cat { font-size: 10px; color: var(--text-light); margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+  .pop-card .price { color: var(--red); font-weight: 700; font-size: 14px; font-family: 'Oswald', sans-serif; }
+
+  /* 3 Promo Banners */
+  .promo-banners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .promo-card {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .promo-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transition: transform 0.5s ease;
+    z-index: 0;
+  }
+  .promo-card:hover::before { transform: scale(1.06); }
+  .promo-card-1::before { background-image: url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=80'); }
+  .promo-card-2::before { background-image: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80'); }
+  .promo-card-3::before { background-image: url('https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&q=80'); }
+
+  .promo-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+  }
+  .promo-content {
+    position: relative; z-index: 2;
+    padding: 30px 28px;
+    height: 100%;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .promo-tag {
+    color: var(--orange);
+    font-size: 10px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .promo-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .promo-sub {
+    color: var(--orange);
+    font-size: 11px;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  .promo-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 9px 18px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    align-self: flex-start;
+    transition: background 0.2s;
+  }
+  .promo-btn:hover { background: var(--red-bright); }
+
+  /* ===================== ABOUT SECTION ===================== */
+  .about-section {
+    padding: 90px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--white);
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 8px solid var(--cream-2);
+    margin: 0 auto;
+  }
+  .about-img-circle::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border: 2px dashed rgba(200,34,10,0.25);
+    border-radius: 50%;
+    animation: spin 30s linear infinite;
+  }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .about-img-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+  .quality-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 90px; height: 90px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.3;
+    box-shadow: 0 6px 20px rgba(200,34,10,0.4);
+  }
+
+  .review-bubble {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    border-radius: 30px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .review-bubble .stars { color: var(--orange); font-size: 12px; }
+  .review-bubble .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; }
+
+  .about-text .section-tag {
+    color: var(--orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .about-text h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .about-text p {
+    color: var(--text-mid);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .about-btns {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange);
+    color: var(--dark);
+    text-decoration: none;
+    padding: 12px 26px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 12px 24px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 2px solid rgba(0,0,0,0.15);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--red); color: var(--red); }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .about-feature h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .about-feature h4 .icon { color: var(--orange); font-size: 16px; }
+  .about-feature p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ===================== DEAL BANNER ===================== */
+  .deal-banner {
+    position: relative;
+    background: var(--dark);
+    padding: 80px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    overflow: hidden;
+  }
+  .deal-banner::before {
+    content: 'SPECIAL DEAL';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 140px;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: 10px;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .deal-content {
+    position: relative; z-index: 2;
+  }
+  .deal-script {
+    font-family: 'Dancing Script', cursive;
+    color: var(--orange);
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .deal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+  }
+  .deal-subtitle {
+    color: var(--orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .deal-desc {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 380px;
+    margin-bottom: 28px;
+  }
+  .deal-img-wrap {
+    position: relative; z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .deal-img {
+    width: 100%;
+    max-width: 480px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: brightness(0.9);
+  }
+  .deal-price-badge {
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
+    width: 100px; height: 100px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    animation: pulse2 2.5s infinite;
+  }
+  .deal-price-badge .only { font-size: 11px; color: var(--dark); font-weight: 600; letter-spacing: 1px; }
+  .deal-price-badge .amt { font-size: 26px; font-weight: 800; color: var(--dark); line-height: 1; }
+
+  @keyframes pulse2 {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
+
+  /* ===================== BEST SELLERS ===================== */
+  .best-sellers {
+    background: var(--cream);
+    padding: 80px 60px;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .section-tag {
+    color: var(--orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .sellers-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .seller-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 24px 18px;
+    text-align: center;
+    width: 190px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    cursor: pointer;
+  }
+  .seller-card:hover { transform: translateY(-8px); box-shadow: 0 14px 40px rgba(0,0,0,0.13); }
+
+  .heart-btn {
+    position: absolute;
+    top: 12px; right: 12px;
+    width: 30px; height: 30px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .heart-btn:hover { background: var(--red-bright); }
+
+  .seller-card-img {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 16px;
+    border: 4px solid var(--cream-2);
+  }
+  .seller-card-img img { width: 100%; height: 100%; object-fit: cover; }
+  .seller-card h3 { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+  .seller-card .desc { font-size: 11px; color: var(--text-light); margin-bottom: 8px; }
+  .seller-card .price { color: var(--red); font-weight: 800; font-size: 16px; font-family: 'Oswald', sans-serif; }
+
+  .view-all-wrap { text-align: center; margin-top: 40px; }
+  .btn-red {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 13px 32px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-red:hover { background: var(--red-bright); transform: translateY(-2px); }
+
+  /* ===================== MENU SECTION ===================== */
+  .menu-section {
+    background: var(--white);
+    padding: 80px 80px;
+  }
+  .menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+  .menu-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 40px;
+    border: 2px solid rgba(0,0,0,0.1);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: transparent;
+  }
+  .menu-tab.active {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+  }
+  .menu-tab:hover:not(.active) { border-color: var(--red); color: var(--red); }
+  .menu-tab .tab-icon { font-size: 16px; }
+
+  .menu-items {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .menu-items.active { display: grid; }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 8px;
+    padding: 12px 10px;
+  }
+  .menu-item:hover { background: var(--cream); }
+
+  .menu-item-img {
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--cream-2);
+  }
+  .menu-item-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .menu-item-info { flex: 1; }
+  .menu-item-info h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .menu-item-info .item-desc { font-size: 11px; color: var(--text-light); }
+  .menu-item-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    white-space: nowrap;
+  }
+
+  /* ===================== WHY CHOOSE US ===================== */
+  .why-section {
+    background: var(--cream);
+    padding: 80px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-section::before {
+    content: '10054';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    color: rgba(0,0,0,0.04);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .why-left {}
+  .why-left .section-tag { display: block; color: var(--orange); font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
+  .why-left h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .why-left p { color: var(--text-mid); font-size: 14px; line-height: 1.8; margin-bottom: 28px; max-width: 420px; }
+
+  .founder-badge {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 32px;
+  }
+  .founder-badge img {
+    width: 46px; height: 46px; border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--orange);
+  }
+  .founder-badge .name { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-dark); }
+  .founder-badge .role { font-size: 11px; color: var(--text-light); }
+
+  .stats-row {
+    display: flex; gap: 30px; flex-wrap: wrap;
+  }
+  .stat h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--text-dark);
+    line-height: 1;
+  }
+  .stat h3 span { color: var(--orange); }
+  .stat p { font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+
+  .why-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .why-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .why-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+  .why-card .icon-wrap {
+    width: 50px; height: 50px;
+    background: var(--cream-2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    color: var(--red);
+    font-size: 20px;
+  }
+  .why-card h4 { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dark); margin-bottom: 8px; }
+  .why-card p { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ===================== TESTIMONIALS ===================== */
+  .testimonials {
+    position: relative;
+    background: var(--dark-2);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    min-height: 480px;
+    overflow: hidden;
+  }
+  .testi-img {
+    position: relative;
+    overflow: hidden;
+  }
+  .testi-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+  .play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px; height: 70px;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .play-btn:hover { background: var(--red); }
+
+  .testi-content {
+    padding: 70px 60px;
+    position: relative;
+  }
+  .testi-tag { color: var(--orange); font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; display: block; }
+  .testi-title { font-family: 'Oswald', sans-serif; font-size: 32px; font-weight: 700; color: var(--white); text-transform: uppercase; margin-bottom: 40px; }
+
+  .review-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 28px;
+    max-width: 480px;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.5s;
+  }
+  .reviewer-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .reviewer-info { display: flex; align-items: center; gap: 12px; }
+  .reviewer-info img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--orange); }
+  .reviewer-name { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; color: var(--white); }
+  .reviewer-role { font-size: 11px; color: rgba(255,255,255,0.5); }
+  .quote-icon { color: var(--orange); font-size: 24px; }
+  .stars-row { color: var(--orange); font-size: 14px; margin-bottom: 14px; }
+  .review-text { color: rgba(255,255,255,0.75); font-size: 14px; line-height: 1.7; }
+
+  .testi-nav { display: flex; gap: 10px; margin-top: 24px; }
+  .testi-btn {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .testi-btn:hover, .testi-btn.active { background: var(--red); border-color: var(--red); }
+
+  /* ===================== DEAL OF WEEK OFFER ===================== */
+  .offer-section {
+    background: var(--white);
+    padding: 80px 80px;
+  }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .offer-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    margin-bottom: 32px;
+  }
+  .offer-tab {
+    padding: 10px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-mid);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    text-transform: uppercase;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .offer-tab.active { color: var(--red); border-bottom-color: var(--red); }
+
+  .offer-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .offer-item-img {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid var(--cream-2);
+  }
+  .offer-item-img img { width: 100%; height: 100%; object-fit: cover; }
+  .offer-item-info { flex: 1; }
+  .offer-item-info h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .offer-item-info .item-price { color: var(--red); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; margin: 4px 0; }
+  .offer-item-info p { font-size: 12px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ===================== VIRTUAL TOUR ===================== */
+  .tour-section {
+    background: var(--dark);
+    padding: 80px;
+    text-align: center;
+  }
+  .tour-section .section-tag { display: block; color: var(--orange); font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
+  .tour-section h2 { font-family: 'Oswald', sans-serif; font-size: 38px; font-weight: 700; color: var(--white); text-transform: uppercase; margin-bottom: 12px; }
+  .tour-section p { color: rgba(255,255,255,0.65); font-size: 15px; max-width: 500px; margin: 0 auto 40px; line-height: 1.7; }
+
+  .tour-frame {
+    width: 100%;
+    max-width: 900px;
+    height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 2px solid rgba(255,255,255,0.1);
+    background: #1e1e1e;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+  .tour-placeholder {
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+  }
+  .tour-placeholder i { font-size: 60px; display: block; margin-bottom: 16px; color: var(--orange); }
+  .tour-placeholder p { font-size: 16px; }
+
+  /* ===================== RESERVATION ===================== */
+  .reservation {
+    background: var(--cream);
+    padding: 80px;
+  }
+  .reservation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .res-left {}
+  .res-left .section-tag { display: block; color: var(--orange); font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
+  .res-left h2 { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; color: var(--text-dark); text-transform: uppercase; line-height: 1.1; margin-bottom: 16px; }
+  .res-left p { color: var(--text-mid); font-size: 14px; line-height: 1.8; }
+
+  .res-form { display: flex; flex-direction: column; gap: 14px; }
+  .res-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .res-input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .res-input:focus { border-color: var(--orange); }
+  .res-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .res-submit:hover { background: var(--red-bright); }
+
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: var(--dark);
+  }
+
+  .footer-top {
+    background: var(--orange);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-contact-item {
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--dark);
+    border-right: 1px solid rgba(0,0,0,0.12);
+  }
+  .footer-contact-item:last-child { border-right: none; }
+  .footer-contact-item i { font-size: 20px; color: var(--dark); }
+  .footer-contact-item .label { font-size: 10px; font-family: 'Oswald', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 2px; }
+  .footer-contact-item .value { font-size: 14px; font-weight: 700; font-family: 'Oswald', sans-serif; }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    gap: 40px;
+    padding: 60px 60px 40px;
+  }
+  .footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--red);
+    display: inline-block;
+  }
+  .footer-col p { color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.8; margin-bottom: 18px; }
+
+  .social-row { display: flex; gap: 10px; }
+  .social-icon {
+    width: 34px; height: 34px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .social-icon:hover { background: var(--red); color: white; }
+
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links li a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+    transition: color 0.2s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .footer-links li a::before { content: '»'; color: var(--red); font-size: 12px; }
+  .footer-links li a:hover { color: var(--orange); }
+
+  .footer-hours { color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.8; margin-bottom: 20px; }
+  .footer-hours span { color: var(--orange); }
+
+  .newsletter-row {
+    display: flex;
+    margin-top: 14px;
+  }
+  .newsletter-input {
+    flex: 1;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    outline: none;
+  }
+  .newsletter-input::placeholder { color: rgba(255,255,255,0.35); }
+  .newsletter-btn {
+    background: var(--orange);
+    border: none;
+    padding: 12px 16px;
+    border-radius: 0 4px 4px 0;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .newsletter-btn:hover { background: var(--orange-light); }
+
+  .footer-bottom {
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 60px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    font-family: 'Nunito', sans-serif;
+  }
+  .footer-bottom a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 16px; transition: color 0.2s; }
+  .footer-bottom a:hover { color: white; }
+
+  /* ===================== SCROLL REVEAL ===================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  /* ===================== MOBILE ===================== */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .slide-content { padding: 0 30px; }
+    .slide-title { font-size: 44px; }
+    .price-badge { display: none; }
+    .about-section, .deal-banner, .why-grid, .reservation-grid, .offer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .about-img-circle { width: 260px; height: 260px; }
+    .menu-items { grid-template-columns: 1fr; }
+    .footer-main { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-contact-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.12); }
+    .promo-banners { grid-template-columns: 1fr; }
+    .sellers-grid { gap: 12px; }
+    .seller-card { width: 160px; }
+    .testimonials { grid-template-columns: 1fr; }
+    .testi-img { height: 250px; }
+    .about-section, .deal-banner, .why-section, .offer-section, .reservation, .tour-section, .menu-section { padding: 60px 20px; }
+    .footer-main { padding: 40px 20px 30px; }
+    .footer-bottom { padding: 14px 20px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🌶️</div>
+    <div class="nav-logo-text">
+      <span class="brand">KEBABISH ORIGINAL</span>
+      <span class="sub">BLACKBURN</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#tour">Virtual Tour</a></li>
+    <li><a href="#reservation">Book Table</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="#"><i class="fas fa-search"></i></a>
+    <a href="#"><i class="fas fa-shopping-bag"></i></a>
+    <a href="#reservation" class="nav-order-btn">ORDER NOW <i class="fas fa-arrow-right"></i></a>
+  </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero">
+  <!-- SLIDE 1: The Thrill of the Grill -->
+  <div class="slide slide-1 active">
+    <div class="slide-bg"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <span class="slide-tag">Welcome to Kebabish Original</span>
+      <h1 class="slide-title">THE THRILL<br>OF THE <span>GRILL</span></h1>
+      <p class="slide-desc">Hand-marinated meats seared over high-heat charcoal — a true feast for the senses. The iconic Kebabish grill, as it was meant to be experienced.</p>
+      <a href="#menu" class="slide-btn">EXPLORE MENU <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="price-badge">
+      <span class="label">FROM ONLY</span>
+      <span class="amount">£6.95</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Tandoori Lamb Chops -->
+  <div class="slide slide-2">
+    <div class="slide-bg"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <span class="slide-tag">Award-Winning Speciality</span>
+      <h1 class="slide-title">TANDOORI<br><span>LAMB CHOPS</span></h1>
+      <p class="slide-desc">Marinated overnight in rich, spiced yogurt and traditional tandoori masalas — then grilled to smoky perfection. Blackburn's most loved dish.</p>
+      <a href="#menu" class="slide-btn">ORDER NOW <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="price-badge">
+      <span class="label">ONLY</span>
+      <span class="amount">£7.95</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: The Mega Karahi -->
+  <div class="slide slide-3">
+    <div class="slide-bg"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <span class="slide-tag">The Mega Karahi Experience</span>
+      <h1 class="slide-title">THE MEGA<br><span>KARAHI</span></h1>
+      <p class="slide-desc">Our legendary Pakhtooni VIP Karahi — slow-cooked on the bone in a rich Punjabi sauce, served sizzling hot. Available in ½kg or 1kg portions.</p>
+      <a href="#menu" class="slide-btn">VIEW KARAHIS <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="price-badge">
+      <span class="label">FROM</span>
+      <span class="amount">£15.95</span>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="slider-controls">
+    <div class="slider-dot active" data-slide="0"></div>
+    <div class="slider-dot" data-slide="1"></div>
+    <div class="slider-dot" data-slide="2"></div>
+  </div>
+  <div class="slider-arrows">
+    <div class="slider-arrow" id="prev"><i class="fas fa-chevron-left"></i></div>
+    <div class="slider-arrow" id="next"><i class="fas fa-chevron-right"></i></div>
+  </div>
+</section>
+
+<!-- POPULAR FOOD ITEMS -->
+<section class="popular-strip">
+  <h2>Popular Food Items</h2>
+  <div class="popular-grid">
+    <div class="pop-card">
+      <div class="pop-card-img">
+        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200&q=80" alt="Tandoori Lamb Chops">
+      </div>
+      <h3>TANDOORI LAMB CHOPS</h3>
+      <div class="cat">Grill Specials</div>
+      <div class="price">£7.95</div>
+    </div>
+    <div class="pop-card">
+      <div class="pop-card-img">
+        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=80" alt="Seek Kebab Lamb">
+      </div>
+      <h3>SEEK KEBAB LAMB</h3>
+      <div class="cat">Starters</div>
+      <div class="price">£6.95</div>
+    </div>
+    <div class="pop-card">
+      <div class="pop-card-img">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&q=80" alt="Butter Chicken">
+      </div>
+      <h3>BUTTER CHICKEN</h3>
+      <div class="cat">Chicken Specials</div>
+      <div class="price">£11.95</div>
+    </div>
+    <div class="pop-card">
+      <div class="pop-card-img">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=200&q=80" alt="Mix Grill">
+      </div>
+      <h3>THE MIX GRILL</h3>
+      <div class="cat">Sharing Platter</div>
+      <div class="price">£20.95</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 PROMO BANNERS -->
+<div class="promo-banners">
+  <div class="promo-card promo-card-1">
+    <div class="promo-overlay"></div>
+    <div class="promo-content">
+      <div class="promo-tag">ON THIS WEEK</div>
+      <div class="promo-title">THE THRILL<br>OF THE GRILL</div>
+      <div class="promo-sub">Limited Time Offer</div>
+      <a href="#menu" class="promo-btn">ORDER NOW <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+  <div class="promo-card promo-card-2">
+    <div class="promo-overlay"></div>
+    <div class="promo-content">
+      <div class="promo-tag">WELCOME KEBABISH</div>
+      <div class="promo-title">TODAY'S<br>SPECIAL KARAHI</div>
+      <div class="promo-sub">Limited Time Offer</div>
+      <a href="#menu" class="promo-btn">ORDER NOW <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+  <div class="promo-card promo-card-3">
+    <div class="promo-overlay"></div>
+    <div class="promo-content">
+      <div class="promo-tag">ON THIS WEEK</div>
+      <div class="promo-title">TANDOORI<br>LAMB CHOPS</div>
+      <div class="promo-sub">Limited Time Offer</div>
+      <a href="#menu" class="promo-btn">ORDER NOW <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section class="about-section" id="about">
+  <div class="about-img-wrap reveal-left">
+    <div class="about-img-circle">
+      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80" alt="Our Chef">
+    </div>
+    <div class="quality-badge">QUALITY<br>FOOD</div>
+    <div class="review-bubble">
+      <div class="dot"></div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <strong style="font-size:11px;">Very Good Food</strong>
+      </div>
+    </div>
+  </div>
+  <div class="about-text reveal-right">
+    <span class="section-tag">Learn About Kebabish</span>
+    <h2>Authentic Asian Cuisine<br>Crafted With Love & Passion</h2>
+    <p>At Kebabish Original Blackburn, we believe in the art of authentic Asian cooking, where every dish is crafted with love, passion, and meticulous attention to detail. From our signature flaming grills to our award-winning traditional curries, we pride ourselves on using the freshest ingredients to bring you an unforgettable dining experience in the heart of Blackburn.</p>
+    <div class="about-btns">
+      <a href="#about" class="btn-primary">LEARN MORE US <i class="fas fa-arrow-right"></i></a>
+      <a href="#menu" class="btn-outline">EXPLORE POPULAR MENU <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="about-features">
+      <div class="about-feature">
+        <h4><span class="icon">🔥</span> Signature Grills</h4>
+        <p>Our meats are hand-marinated daily and seared over high-heat charcoal for that perfect Kebabish finish.</p>
+      </div>
+      <div class="about-feature">
+        <h4><span class="icon">👨‍🍳</span> Expert Chefs</h4>
+        <p>Our talented chefs craft each dish with precision sourcing and decades of culinary expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIAL DEAL BANNER -->
+<section class="deal-banner">
+  <div class="deal-content reveal-left">
+    <span class="deal-script">Delicious</span>
+    <h2 class="deal-title">SPECIAL DEAL<br>FOR THIS WEEK</h2>
+    <div class="deal-subtitle">TANDOORI LAMB CHOPS ONLY £7.95</div>
+    <p class="deal-desc">Marinated overnight in a rich, spiced yogurt and traditional tandoori masalas. Grilled to perfection with a charred, smoky exterior and a succulent, melt-in-your-mouth interior — this is Kebabish at its very best.</p>
+    <a href="#reservation" class="btn-red">ORDER NOW <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="deal-img-wrap reveal-right">
+    <img class="deal-img" src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&q=80" alt="Tandoori Lamb Chops Special">
+    <div class="deal-price-badge">
+      <span class="only">ONLY</span>
+      <span class="amt">£7.95</span>
+    </div>
+  </div>
+</section>
+
+<!-- BEST SELLING DISHES -->
+<section class="best-sellers">
+  <div class="section-header reveal">
+    <span class="section-tag">🍽️ POPULAR DISHES 🍽️</span>
+    <h2 class="section-title">Best Selling Dishes</h2>
+  </div>
+  <div class="sellers-grid reveal">
+    <div class="seller-card">
+      <div class="heart-btn"><i class="fas fa-heart"></i></div>
+      <div class="seller-card-img">
+        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=300&q=80" alt="Seek Kebab">
+      </div>
+      <h3>SEEK KEBAB LAMB</h3>
+      <div class="desc">Classic starter</div>
+      <div class="price">£6.95</div>
+    </div>
+    <div class="seller-card">
+      <div class="heart-btn"><i class="fas fa-heart"></i></div>
+      <div class="seller-card-img">
+        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=300&q=80" alt="Tandoori Lamb Chops">
+      </div>
+      <h3>TANDOORI LAMB CHOPS</h3>
+      <div class="desc">Award-winning</div>
+      <div class="price">£7.95</div>
+    </div>
+    <div class="seller-card">
+      <div class="heart-btn"><i class="fas fa-heart"></i></div>
+      <div class="seller-card-img">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=300&q=80" alt="Butter Chicken">
+      </div>
+      <h3>BUTTER CHICKEN</h3>
+      <div class="desc">Chicken specials</div>
+      <div class="price">£11.95</div>
+    </div>
+    <div class="seller-card">
+      <div class="heart-btn"><i class="fas fa-heart"></i></div>
+      <div class="seller-card-img">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=300&q=80" alt="Lamb Rogan Josh">
+      </div>
+      <h3>LAMB ROGAN JOSH</h3>
+      <div class="desc">Lamb specials</div>
+      <div class="price">£12.95</div>
+    </div>
+    <div class="seller-card">
+      <div class="heart-btn"><i class="fas fa-heart"></i></div>
+      <div class="seller-card-img">
+        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300&q=80" alt="Mix Grill">
+      </div>
+      <h3>THE MIX GRILL</h3>
+      <div class="desc">Sharing platter for 3</div>
+      <div class="price">£20.95</div>
+    </div>
+  </div>
+  <div class="view-all-wrap reveal">
+    <a href="#menu" class="btn-red">VIEW ALL ITEMS <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section class="menu-section" id="menu">
+  <div class="section-header reveal">
+    <h2 class="section-title" style="font-size:32px;">Kebabish Original — Full Menu</h2>
+  </div>
+  <div class="menu-tabs">
+    <button class="menu-tab active" data-tab="starters"><span class="tab-icon">🌶️</span> Starters</button>
+    <button class="menu-tab" data-tab="grills"><span class="tab-icon">🔥</span> Grills</button>
+    <button class="menu-tab" data-tab="karahi"><span class="tab-icon">🍲</span> Karahis</button>
+    <button class="menu-tab" data-tab="specials"><span class="tab-icon">⭐</span> Specials</button>
+  </div>
+
+  <!-- Starters -->
+  <div class="menu-items active" id="tab-starters">
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=80" alt="Seek Kebab"></div>
+      <div class="menu-item-info"><h4>Seek Kebab Lamb (4)</h4><div class="item-desc">Minced lamb with herbs, ginger & green chillies</div></div>
+      <div class="menu-item-price">£6.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200&q=80" alt="Tandoori Lamb Chops"></div>
+      <div class="menu-item-info"><h4>Tandoori Lamb Chops (4)</h4><div class="item-desc">Marinated overnight in spiced yogurt & masalas</div></div>
+      <div class="menu-item-price">£7.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=200&q=80" alt="Chicken Seek Kebab"></div>
+      <div class="menu-item-info"><h4>Chicken Seekh Kebab (4)</h4><div class="item-desc">Spiced minced chicken flame-grilled on skewers</div></div>
+      <div class="menu-item-price">£6.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=200&q=80" alt="Spicy Chicken Wings"></div>
+      <div class="menu-item-info"><h4>Spicy Chicken Wings (8)</h4><div class="item-desc">Grilled wings with a layer of Peri Peri sauce</div></div>
+      <div class="menu-item-price">£6.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&q=80" alt="Chicken Tikka"></div>
+      <div class="menu-item-info"><h4>Chicken Tikka (8)</h4><div class="item-desc">Breast pieces marinated & chargrilled in special sauce</div></div>
+      <div class="menu-item-price">£6.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&q=80" alt="Papadoms"></div>
+      <div class="menu-item-info"><h4>Papadoms (2)</h4><div class="item-desc">With chilli dip, mango sauce & mint chutney</div></div>
+      <div class="menu-item-price">£3.00</div>
+    </div>
+  </div>
+
+  <!-- Grills -->
+  <div class="menu-items" id="tab-grills">
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=200&q=80" alt="Mix Grill"></div>
+      <div class="menu-item-info"><h4>The Mix Grill (for 3)</h4><div class="item-desc">3 chops, 3 seek kebabs, 3 chicken tikka, 3 lamb tikka & 3 wings</div></div>
+      <div class="menu-item-price">£20.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=200&q=80" alt="Full Peri Peri"></div>
+      <div class="menu-item-info"><h4>Full Peri Peri Chicken</h4><div class="item-desc">Spit roasted with a layer of Peri Peri sauce</div></div>
+      <div class="menu-item-price">£11.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200&q=80" alt="Chicken Tikka Sizzler"></div>
+      <div class="menu-item-info"><h4>Chicken Tikka Sizzler</h4><div class="item-desc">Chargrilled, served on grilled onions, peppers & wedges</div></div>
+      <div class="menu-item-price">£12.50</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&q=80" alt="Lamb Tikka Sizzler"></div>
+      <div class="menu-item-info"><h4>Lamb Tikka Sizzler</h4><div class="item-desc">Chargrilled lamb, peppers on a bed of wedges</div></div>
+      <div class="menu-item-price">£12.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=80" alt="BBQ Shredded Lamb"></div>
+      <div class="menu-item-info"><h4>BBQ Shredded Lamb</h4><div class="item-desc">Lightly spiced barbecue, cooked with fresh peppers & onions</div></div>
+      <div class="menu-item-price">£10.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&q=80" alt="Baby Chicken"></div>
+      <div class="menu-item-info"><h4>Baby Chicken (Spit Roasted)</h4><div class="item-desc">Whole baby chicken, spit roasted to perfection</div></div>
+      <div class="menu-item-price">£11.95</div>
+    </div>
+  </div>
+
+  <!-- Karahis -->
+  <div class="menu-items" id="tab-karahi">
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&q=80" alt="Pakhtooni Lamb"></div>
+      <div class="menu-item-info"><h4>Pakhtooni VIP Lamb ½kg</h4><div class="item-desc">Spring lamb on the bone, black pepper & olive oil in a wok</div></div>
+      <div class="menu-item-price">£16.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=200&q=80" alt="Pakhtooni Chicken"></div>
+      <div class="menu-item-info"><h4>Pakhtooni VIP Chicken ½kg</h4><div class="item-desc">Chicken on the bone, white pepper & olive oil in a wok</div></div>
+      <div class="menu-item-price">£15.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200&q=80" alt="Lahori Karahi Chicken"></div>
+      <div class="menu-item-info"><h4>Lahori Karahi Chicken</h4><div class="item-desc">Award-winning Punjabi style, green chillies & blend of spices</div></div>
+      <div class="menu-item-price">£12.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=80" alt="Karahi Lamb Chops"></div>
+      <div class="menu-item-info"><h4>Karahi Lamb Chops</h4><div class="item-desc">Thick rich sauce garnished with lemon & coriander</div></div>
+      <div class="menu-item-price">£12.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=200&q=80" alt="Karahi King Prawns"></div>
+      <div class="menu-item-info"><h4>Karahi King Prawns</h4><div class="item-desc">King prawns in traditional karahi sauce</div></div>
+      <div class="menu-item-price">£14.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&q=80" alt="Karahi Fish"></div>
+      <div class="menu-item-info"><h4>Karahi Fish</h4><div class="item-desc">Fresh fish in house karahi masala</div></div>
+      <div class="menu-item-price">£12.95</div>
+    </div>
+  </div>
+
+  <!-- Specials -->
+  <div class="menu-items" id="tab-specials">
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&q=80" alt="Butter Chicken"></div>
+      <div class="menu-item-info"><h4>Butter Chicken</h4><div class="item-desc">Tender chicken in a rich, creamy tomato sauce</div></div>
+      <div class="menu-item-price">£11.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200&q=80" alt="Lamb Rogan Josh"></div>
+      <div class="menu-item-info"><h4>Lamb Rogan Josh</h4><div class="item-desc">Classic lamb curry with aromatic spices</div></div>
+      <div class="menu-item-price">£12.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=80" alt="Chicken Tikka Masala"></div>
+      <div class="menu-item-info"><h4>Chicken Tikka Masala</h4><div class="item-desc">Smoky tikka in a rich, velvety masala sauce</div></div>
+      <div class="menu-item-price">£11.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=200&q=80" alt="Lamb Shank"></div>
+      <div class="menu-item-info"><h4>Lamb Shank</h4><div class="item-desc">Slow cooked tender lamb shank in delicious sauce</div></div>
+      <div class="menu-item-price">£15.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=200&q=80" alt="Nihari"></div>
+      <div class="menu-item-info"><h4>Nihari</h4><div class="item-desc">Lamb shoulder slow-cooked desi apna style</div></div>
+      <div class="menu-item-price">£13.95</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-img"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&q=80" alt="Palak Gosht"></div>
+      <div class="menu-item-info"><h4>Palak Gosht (Lamb)</h4><div class="item-desc">Slow-cooked lamb with fresh spinach & fenugreek</div></div>
+      <div class="menu-item-price">£12.95</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section" id="why-us">
+  <div class="why-grid">
+    <div class="why-left reveal-left">
+      <span class="section-tag">WHY CHOOSE US</span>
+      <h2>WE OFFER QUALITY SERVICE<br>THAT CUSTOMERS NEED</h2>
+      <p>Welcome to Kebabish Original Blackburn, where culinary excellence meets warm hospitality in every dish we serve. Nestled in the heart of Blackburn's Whalley Range, our eatery invites you on a journey of authentic Asian flavour.</p>
+      <div class="founder-badge">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Founder">
+        <div>
+          <div class="name">THE KEBABISH TEAM</div>
+          <div class="role">Head Chefs & Founders</div>
+        </div>
+      </div>
+      <a href="#about" class="btn-primary" style="margin-bottom:32px;">LEARN MORE US <i class="fas fa-arrow-right"></i></a>
+      <div class="stats-row">
+        <div class="stat"><h3>15<span>+</span></h3><p>Years Serving</p></div>
+        <div class="stat"><h3>50<span>K+</span></h3><p>Happy Customers</p></div>
+        <div class="stat"><h3>80<span>+</span></h3><p>Favourite Dishes</p></div>
+      </div>
+    </div>
+    <div class="why-cards reveal-right">
+      <div class="why-card">
+        <div class="icon-wrap"><i class="fas fa-fire"></i></div>
+        <h4>Best Quality Food</h4>
+        <p>Our talented chefs craft each dish with precision, sourcing only the finest halal ingredients for an authentic experience.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-wrap"><i class="fas fa-undo-alt"></i></div>
+        <h4>Satisfaction Guaranteed</h4>
+        <p>We stand behind every dish we serve. Your happiness and satisfaction are what drive us forward every day.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-wrap"><i class="fas fa-motorcycle"></i></div>
+        <h4>Takeaway & Delivery</h4>
+        <p>Enjoy our authentic Asian cuisine from the comfort of your home — fast, fresh, and as delicious as dining in.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon-wrap"><i class="fas fa-leaf"></i></div>
+        <h4>Fresh Ingredients Daily</h4>
+        <p>We source the freshest produce daily. Every spice, every herb, every cut of meat is selected with care and expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIRTUAL TOUR -->
+<section class="tour-section" id="tour">
+  <span class="section-tag">Experience Kebabish</span>
+  <h2>A Virtual Journey to<br>Authentic Asian Cuisine</h2>
+  <p>Take a 360° virtual tour and see why Kebabish Original Blackburn is the finest Asian cuisine restaurant near you. Experience our inviting ambiance and preview the dishes that await you.</p>
+  <div class="tour-frame">
+    <div class="tour-placeholder">
+      <i class="fas fa-street-view"></i>
+      <p style="font-family:'Oswald',sans-serif; font-size:20px; font-weight:600; color:rgba(255,255,255,0.6); margin-bottom:8px;">360° Virtual Tour</p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.35);">Interactive tour coming soon · Kebabish Original Blackburn</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testi-img">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80" alt="Restaurant Kitchen">
+    <div class="play-btn"><i class="fas fa-play"></i></div>
+  </div>
+  <div class="testi-content">
+    <span class="testi-tag">Testimonials</span>
+    <h2 class="testi-title">What Our Guests Say</h2>
+    <div class="review-card" id="review-card">
+      <div class="reviewer-row">
+        <div class="reviewer-info">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="Reviewer">
+          <div>
+            <div class="reviewer-name" id="rev-name">Ahmed Khan</div>
+            <div class="reviewer-role" id="rev-role">Local Foodie, Blackburn</div>
+          </div>
+        </div>
+        <span class="quote-icon">"</span>
+      </div>
+      <div class="stars-row">★★★★★</div>
+      <p class="review-text" id="rev-text">The Seek Kebab Lamb is absolutely phenomenal — smoky, juicy and perfectly spiced. I've tried every kebab restaurant in Blackburn and Kebabish Original is simply on a different level. Never disappoints.</p>
+    </div>
+    <div class="testi-nav">
+      <button class="testi-btn" id="prev-review"><i class="fas fa-chevron-left"></i></button>
+      <button class="testi-btn active" id="next-review"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- NEW OFFERS MENU -->
+<section class="offer-section">
+  <div class="section-header reveal">
+    <span class="section-tag">DINNER MENU</span>
+    <h2 class="section-title">Our New Offers</h2>
+    <p style="color:var(--text-mid); font-size:14px; margin-top:10px; max-width:540px; margin-left:auto; margin-right:auto;">Experience the vibrant flavours of Blackburn's finest Asian cuisine with our latest chef-curated specials.</p>
+  </div>
+  <div class="offer-grid reveal">
+    <div>
+      <div class="offer-tabs">
+        <div class="offer-tab active" data-offer="featured">Featured Menu</div>
+        <div class="offer-tab" data-offer="sides">Side Dishes</div>
+      </div>
+      <div id="offer-featured">
+        <div class="offer-item">
+          <div class="offer-item-img"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&q=80" alt="Seek Kebab"></div>
+          <div class="offer-item-info">
+            <h4>Seek Kebab Lamb (4)</h4>
+            <div class="item-price">£6.95</div>
+            <p>Four succulent skewers of lean minced lamb, blended with fresh herbs, ginger, and green chillies. Each kebab is expertly flame-grilled to lock in the smoky aroma.</p>
+          </div>
+        </div>
+        <div class="offer-item">
+          <div class="offer-item-img"><img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=200&q=80" alt="Tandoori Lamb Chops"></div>
+          <div class="offer-item-info">
+            <h4>Tandoori Lamb Chops</h4>
+            <div class="item-price">£7.95</div>
+            <p>Tender lamb chops, marinated overnight in rich, spiced yogurt and traditional tandoori masalas. Grilled to perfection — a charred, smoky exterior with succulent interior.</p>
+          </div>
+        </div>
+      </div>
+      <div id="offer-sides" style="display:none;">
+        <div class="offer-item">
+          <div class="offer-item-img"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=200&q=80" alt="Papadoms"></div>
+          <div class="offer-item-info">
+            <h4>Papadoms (2)</h4>
+            <div class="item-price">£3.00</div>
+            <p>Crispy papadoms served with chilli dip, mango sauce, and mint chutney.</p>
+          </div>
+        </div>
+        <div class="offer-item">
+          <div class="offer-item-img"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=200&q=80" alt="Garlic Bread"></div>
+          <div class="offer-item-info">
+            <h4>Garlic Bread Slices</h4>
+            <div class="item-price">£4.95</div>
+            <p>Freshly oven-baked garlic bread slices — perfect to accompany any main dish.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80" alt="Food" style="width:100%; height:350px; object-fit:cover; border-radius:12px; box-shadow: 0 16px 50px rgba(0,0,0,0.15);">
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reservation" id="reservation">
+  <div class="reservation-grid">
+    <div class="res-left reveal-left">
+      <span class="section-tag">Book a Table</span>
+      <h2>MAKE A RESERVATION</h2>
+      <p>Enjoy a memorable dining experience at Kebabish Original Blackburn by reserving your table today. Whether it's a family gathering, special celebration, or romantic dinner — we look forward to welcoming you.</p>
+      <br>
+      <p style="font-size:13px;"><i class="fas fa-map-marker-alt" style="color:var(--red); margin-right:8px;"></i> 83 Whalley New Rd, Blackburn, BB1 6JZ</p>
+      <p style="font-size:13px; margin-top:8px;"><i class="fas fa-phone" style="color:var(--red); margin-right:8px;"></i> Call us to book your table</p>
+    </div>
+    <div class="reveal-right">
+      <div class="res-form">
+        <div class="res-row">
+          <input class="res-input" type="text" placeholder="Your Name">
+          <input class="res-input" type="email" placeholder="Email Address">
+        </div>
+        <div class="res-row">
+          <input class="res-input" type="tel" placeholder="Phone Number">
+          <input class="res-input" type="number" placeholder="Guests" min="1" max="30">
+        </div>
+        <div class="res-row">
+          <input class="res-input" type="date" placeholder="Date">
+          <input class="res-input" type="time" placeholder="Time">
+        </div>
+        <textarea class="res-input" rows="3" placeholder="Special requests or dietary requirements..." style="resize:vertical;"></textarea>
+        <button class="res-submit">BOOK MY TABLE <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-contact-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <div>
+        <div class="label">Address</div>
+        <div class="value">83 Whalley New Rd, Blackburn, BB1 6JZ</div>
+      </div>
+    </div>
+    <div class="footer-contact-item">
+      <i class="fas fa-envelope"></i>
+      <div>
+        <div class="label">Send Email</div>
+        <div class="value">info@kebabishoriginalblackburn.com</div>
+      </div>
+    </div>
+    <div class="footer-contact-item">
+      <i class="fas fa-phone-alt"></i>
+      <div>
+        <div class="label">Call Us</div>
+        <div class="value">+44 (0) 1254 XXX XXX</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-main">
+    <div class="footer-col">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <div style="width:36px;height:36px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;">🌶️</div>
+        <div>
+          <div style="color:white;font-family:'Oswald',sans-serif;font-size:14px;font-weight:600;">KEBABISH ORIGINAL</div>
+          <div style="color:var(--orange);font-size:9px;letter-spacing:2px;text-transform:uppercase;">BLACKBURN</div>
+        </div>
+      </div>
+      <p>Bringing authentic Asian cuisine to the heart of Blackburn since 2005. Where culinary excellence meets warm hospitality in every dish we serve.</p>
+      <div class="social-row">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#tour">Virtual Tour</a></li>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#reservation">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Our Menu</h4>
+      <ul class="footer-links">
+        <li><a href="#">Grills & BBQ</a></li>
+        <li><a href="#">Karahis</a></li>
+        <li><a href="#">Starters</a></li>
+        <li><a href="#">Chicken Specials</a></li>
+        <li><a href="#">Lamb Specials</a></li>
+        <li><a href="#">Vegetarian</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-hours">
+        Monday – Friday: <span>11am – 11pm</span><br>
+        Saturday – Sunday: <span>11am – 11:30pm</span>
+      </div>
+      <p style="font-size:12px;">Stay updated with our latest deals and new menu items:</p>
+      <div class="newsletter-row">
+        <input class="newsletter-input" type="email" placeholder="Your email address">
+        <button class="newsletter-btn"><i class="fas fa-arrow-right"></i></button>
+      </div>
+      <label style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:11px;color:rgba(255,255,255,0.4);cursor:pointer;">
+        <input type="checkbox" style="accent-color:var(--orange);">
+        I agree to the <a href="#" style="color:var(--orange);text-decoration:none;">Privacy Policy</a>
+      </label>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© All Copyright 2025 by Kebabish Original Blackburn</span>
+    <div>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============ HERO SLIDER ============
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slider-dot');
+  let current = 0;
+  let autoTimer;
+
+  function goToSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(() => goToSlide(current + 1), 5500);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  document.getElementById('next').addEventListener('click', () => { goToSlide(current + 1); resetAuto(); });
+  document.getElementById('prev').addEventListener('click', () => { goToSlide(current - 1); resetAuto(); });
+  dots.forEach(d => d.addEventListener('click', () => { goToSlide(+d.dataset.slide); resetAuto(); }));
+  startAuto();
+
+  // ============ MENU TABS ============
+  document.querySelectorAll('.menu-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.menu-items').forEach(m => m.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ============ OFFER TABS ============
+  document.querySelectorAll('.offer-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.offer-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('offer-featured').style.display = tab.dataset.offer === 'featured' ? 'block' : 'none';
+      document.getElementById('offer-sides').style.display = tab.dataset.offer === 'sides' ? 'block' : 'none';
+    });
+  });
+
+  // ============ TESTIMONIALS ============
+  const reviews = [
+    { name: 'Ahmed Khan', role: 'Local Foodie, Blackburn', text: 'The Seek Kebab Lamb is absolutely phenomenal — smoky, juicy and perfectly spiced. I\'ve tried every kebab restaurant in Blackburn and Kebabish Original is simply on a different level. Never disappoints.' },
+    { name: 'Sarah Mahmood', role: 'Google Review, 5 Stars', text: 'We came for a family birthday dinner and the Mega Karahi was out of this world! The service was fantastic, the food arrived quickly, and the flavours were as authentic as anything I\'ve tasted. Highly recommend!' },
+    { name: 'James Thornton', role: 'TripAdvisor Reviewer', text: 'The Mix Grill for 3 is incredible value and absolutely delicious. The Tandoori Lamb Chops were melt-in-your-mouth tender. This is definitely the best Asian restaurant in Blackburn — maybe the entire North West!' },
+  ];
+  let revIdx = 0;
+
+  document.getElementById('next-review').addEventListener('click', () => {
+    revIdx = (revIdx + 1) % reviews.length;
+    updateReview();
+  });
+  document.getElementById('prev-review').addEventListener('click', () => {
+    revIdx = (revIdx - 1 + reviews.length) % reviews.length;
+    updateReview();
+  });
+
+  function updateReview() {
+    const card = document.getElementById('review-card');
+    card.style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('rev-name').textContent = reviews[revIdx].name;
+      document.getElementById('rev-role').textContent = reviews[revIdx].role;
+      document.getElementById('rev-text').textContent = reviews[revIdx].text;
+      card.style.opacity = '1';
+    }, 300);
+  }
+
+  // ============ SCROLL REVEAL ============
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ============ RESERVATION ============
+  document.querySelector('.res-submit').addEventListener('click', () => {
+    alert('Thank you! Your table reservation request has been received. We will contact you shortly to confirm your booking at Kebabish Original Blackburn. 🌶️');
+  });
+
+  // ============ NEWSLETTER ============
+  document.querySelector('.newsletter-btn').addEventListener('click', () => {
+    const inp = document.querySelector('.newsletter-input');
+    if (inp.value && inp.value.includes('@')) {
+      inp.value = '';
+      inp.placeholder = 'Subscribed! Thank you ✓';
+    }
+  });
+</script>
+</body>
+</html>

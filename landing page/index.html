@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Combined landing page built from Fresheat and Wellfood sections.">
+    <title>Combined Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <link rel="stylesheet" href="assets/wellfood/css/flaticon.min.css">
+    <link rel="stylesheet" href="assets/wellfood/css/fontawesome-5.14.0.min.css">
+    <link rel="stylesheet" href="assets/wellfood/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        section[id] {
+            scroll-margin-top: 120px;
+        }
+
+        .search-wrap,
+        .offcanvas__info,
+        .offcanvas__overlay {
+            z-index: 9999;
+        }
+
+        .header-section .submenu a {
+            white-space: nowrap;
+        }
+
+        .wf-scope {
+            position: relative;
+            font-family: "Roboto", sans-serif;
+            color: #6c6c6c;
+        }
+
+        .wf-scope h2,
+        .wf-scope h3,
+        .wf-scope h4,
+        .wf-scope h5,
+        .wf-scope h6,
+        .wf-scope .sub-title,
+        .wf-scope .read-more,
+        .wf-scope .theme-btn,
+        .wf-scope .counter-title {
+            font-family: "Bebas Neue", sans-serif;
+        }
+
+        .wf-scope .section-title h2,
+        .wf-scope .why-choose-content h2,
+        .wf-scope .offer-content h2 {
+            color: #0f1720;
+            font-size: 72px;
+            line-height: 0.95;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .wf-scope .offer-content.text-white h2,
+        .wf-scope .offer-content.text-white h3,
+        .wf-scope .offer-content.text-white p {
+            color: #fff;
+        }
+
+        .wf-scope .sub-title {
+            display: inline-block;
+            color: #ff5e14;
+            font-size: 28px;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .wf-scope p {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .wf-scope .theme-btn,
+        .wf-scope .read-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-size: 24px;
+            line-height: 1;
+            border: none;
+            transition: 0.3s ease;
+        }
+
+        .wf-scope .theme-btn {
+            min-height: 58px;
+            padding: 16px 34px;
+            background: #ffb338;
+            color: #0f1720;
+        }
+
+        .wf-scope .theme-btn:hover {
+            background: #ff5e14;
+            color: #fff;
+        }
+
+        .wf-scope .read-more {
+            color: #ff5e14;
+        }
+
+        .wf-scope .read-more:hover {
+            color: #0f1720;
+        }
+
+        .wf-scope .service-item,
+        .wf-scope .service-item.style-two {
+            min-height: 236px;
+            padding: 42px 30px 32px;
+            border: none;
+            background: #fff;
+            box-shadow: none;
+        }
+
+        .wf-scope .service-item .icon,
+        .wf-scope .service-item.style-two .icon {
+            margin-bottom: 18px;
+            font-size: 58px;
+            line-height: 1;
+            color: #ff5e14;
+        }
+
+        .wf-scope .service-item h4,
+        .wf-scope .service-item h5 {
+            margin-bottom: 16px;
+            font-size: 34px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .wf-scope .service-item h4 a,
+        .wf-scope .service-item h5 a {
+            color: #0f1720;
+        }
+
+        .wf-scope .about-image-part img:not(.review-author-img) {
+            border-radius: 50%;
+        }
+
+        .wf-scope .about-image-part > img {
+            width: 100%;
+            max-width: 525px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .wf-scope .food-review {
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            min-height: 74px;
+            padding: 14px 24px 14px 14px;
+            background: #fff;
+            border: 1px solid #ff5e14;
+            border-radius: 40px;
+            z-index: 2;
+        }
+
+        .wf-scope .food-review .author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .wf-scope .food-review .text {
+            color: #ff5e14;
+            font-size: 28px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .wf-scope .food-review .ratting {
+            color: #ffb338;
+            font-size: 16px;
+        }
+
+        .wf-scope .quality-food {
+            position: absolute;
+            right: 40px;
+            bottom: -8px;
+            width: 170px;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            z-index: 2;
+        }
+
+        .wf-scope .quality-food .text {
+            color: #fff;
+            font-size: 38px;
+            line-height: 0.95;
+            text-transform: uppercase;
+        }
+
+        .wf-scope .about-us-content .service-item.style-two {
+            min-height: auto;
+            padding: 0;
+            background: transparent;
+        }
+
+        .wf-scope .about-us-content .service-item.style-two .icon {
+            margin-bottom: 12px;
+            font-size: 48px;
+        }
+
+        .wf-scope .about-us-content .service-item.style-two h5 {
+            font-size: 30px;
+        }
+
+        .wf-scope .offer-area {
+            background-color: #151515;
+            background-repeat: repeat;
+        }
+
+        .wf-scope .offer-content img {
+            margin-bottom: 18px;
+        }
+
+        .wf-scope .offer-content h3 {
+            margin-bottom: 18px;
+            color: #ffb338;
+            font-size: 48px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .wf-scope .offer-content h3 span {
+            font-size: 70px;
+        }
+
+        .wf-scope .offer-image {
+            position: relative;
+        }
+
+        .wf-scope .offer-image > img {
+            width: 100%;
+        }
+
+        .wf-scope .offer-badge {
+            position: absolute;
+            right: 70px;
+            bottom: 10px;
+            width: 224px;
+            height: 224px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .wf-scope .offer-badge span {
+            color: #0f1720;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 54px;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .wf-scope .offer-badge .price {
+            font-size: 88px;
+        }
+
+        .wf-scope .counter-item {
+            margin-bottom: 24px;
+        }
+
+        .wf-scope .counter-item .count-text {
+            display: block;
+            color: #0f1720;
+            font-size: 72px;
+            line-height: 1;
+            font-family: "Bebas Neue", sans-serif;
+        }
+
+        .wf-scope .counter-item .counter-title {
+            display: block;
+            margin-top: 10px;
+            color: #6c6c6c;
+            font-size: 20px;
+            line-height: 1.2;
+            text-transform: none;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .wf-scope .author h6,
+        .wf-scope .about-btn-author .author h6 {
+            margin: 0;
+            color: #0f1720;
+            font-size: 26px;
+            line-height: 1;
+            text-transform: uppercase;
+            font-family: "Bebas Neue", sans-serif;
+        }
+
+        .wf-scope .about-btn-author .author h6 span {
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+            text-transform: none;
+        }
+
+        .wf-scope .headline-shapes .shape,
+        .wf-scope .offer-shapes .shape,
+        .wf-scope .about-shapes .shape {
+            pointer-events: none;
+        }
+
+        @media (max-width: 1199.98px) {
+            .wf-scope .section-title h2,
+            .wf-scope .why-choose-content h2,
+            .wf-scope .offer-content h2 {
+                font-size: 56px;
+            }
+
+            .wf-scope .offer-badge {
+                width: 180px;
+                height: 180px;
+                right: 20px;
+            }
+
+            .wf-scope .offer-badge span {
+                font-size: 42px;
+            }
+
+            .wf-scope .offer-badge .price {
+                font-size: 70px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .wf-scope .section-title h2,
+            .wf-scope .why-choose-content h2,
+            .wf-scope .offer-content h2 {
+                font-size: 42px;
+            }
+
+            .wf-scope .food-review {
+                position: static;
+                width: fit-content;
+                margin: 0 auto 20px;
+            }
+
+            .wf-scope .quality-food {
+                width: 130px;
+                height: 130px;
+                right: 20px;
+                bottom: 10px;
+            }
+
+            .wf-scope .quality-food .text {
+                font-size: 30px;
+            }
+
+            .wf-scope .theme-btn,
+            .wf-scope .read-more {
+                font-size: 22px;
+            }
+
+            .wf-scope .service-item,
+            .wf-scope .service-item.style-two {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-color2">
+    <button id="back-top" class="back-to-top">
+        <i class="fa-regular fa-arrow-up"></i>
+    </button>
+
+    <div class="fix-area">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo">
+                            <a href="#hero">
+                                <img src="assets/img/logo/logo.svg" alt="logo">
+                            </a>
+                        </div>
+                        <div class="offcanvas__close">
+                            <button type="button">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text d-none d-lg-block">
+                        This involves interactions between a business and its customers. It's about meeting customers'
+                        needs and resolving their problems. Effective customer service is crucial.
+                    </p>
+                    <div class="offcanvas-gallery-area d-none d-xl-block">
+                        <div class="offcanvas-gallery-items">
+                            <a href="assets/img/header/01.jpg" class="offcanvas-image img-popup">
+                                <img src="assets/img/header/01.jpg" alt="gallery">
+                            </a>
+                            <a href="assets/img/header/02.jpg" class="offcanvas-image img-popup">
+                                <img src="assets/img/header/02.jpg" alt="gallery">
+                            </a>
+                            <a href="assets/img/header/03.jpg" class="offcanvas-image img-popup">
+                                <img src="assets/img/header/03.jpg" alt="gallery">
+                            </a>
+                        </div>
+                        <div class="offcanvas-gallery-items">
+                            <a href="assets/img/header/04.jpg" class="offcanvas-image img-popup">
+                                <img src="assets/img/header/04.jpg" alt="gallery">
+                            </a>
+                            <a href="assets/img/header/05.jpg" class="offcanvas-image img-popup">
+                                <img src="assets/img/header/05.jpg" alt="gallery">
+                            </a>
+                            <a href="assets/img/header/06.jpg" class="offcanvas-image img-popup">
+                                <img src="assets/img/header/06.jpg" alt="gallery">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mobile-menu fix mb-3"></div>
+                    <div class="offcanvas__contact">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon">
+                                    <i class="fal fa-map-marker-alt"></i>
+                                </div>
+                                <div class="offcanvas__contact-text">
+                                    <a href="#footer">4648 Rocky Road Philadelphia</a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15">
+                                    <i class="fal fa-envelope"></i>
+                                </div>
+                                <div class="offcanvas__contact-text">
+                                    <a href="mailto:info@exmple.com">info@exmple.com</a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15">
+                                    <i class="fal fa-clock"></i>
+                                </div>
+                                <div class="offcanvas__contact-text">
+                                    <a href="#footer">Mon-Friday, 09am -05pm</a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15">
+                                    <i class="far fa-phone"></i>
+                                </div>
+                                <div class="offcanvas__contact-text">
+                                    <a href="tel:+11002345909">+11002345909</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="header-button mt-4">
+                            <a href="#food-menu" class="theme-btn">
+                                <span class="button-content-wrapper d-flex align-items-center justify-content-center">
+                                    <span class="button-icon"><i class="fa-sharp fa-regular fa-cart-shopping bg-transparent text-white me-2"></i></span>
+                                    <span class="button-text">ORDER NOW</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="social-icon d-flex align-items-center">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+
+    <header class="header-section">
+        <div class="black-bg"></div>
+        <div class="red-bg"></div>
+        <div class="container-fluid">
+            <div class="main-header-wrapper">
+                <div class="logo-image">
+                    <a href="#hero">
+                        <img src="assets/img/logo/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="main-header-items">
+                    <div class="header-top-wrapper">
+                        <span><i class="fa-regular fa-clock"></i> 09:00 am - 06:00 pm</span>
+                        <div class="social-icon d-flex align-items-center">
+                            <span>Follow Us:</span>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div id="header-sticky" class="header-1">
+                        <div class="mega-menu-wrapper">
+                            <div class="header-main">
+                                <div class="logo">
+                                    <a href="#hero" class="header-logo">
+                                        <img src="assets/img/logo/logo.svg" alt="logo">
+                                    </a>
+                                </div>
+                                <div class="header-left">
+                                    <div class="mean__menu-wrapper">
+                                        <div class="main-menu">
+                                            <nav id="mobile-menu">
+                                                <ul>
+                                                    <li class="has-dropdown active menu-thumb">
+                                                        <a href="#hero">
+                                                            Home
+                                                            <i class="fa-regular fa-plus"></i>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#hero">Hero Slider</a></li>
+                                                            <li><a href="#popular-items">Popular Food Items</a></li>
+                                                            <li><a href="#offer-cards">Offer Cards</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-dropdown">
+                                                        <a href="#about-wellfood">
+                                                            About Us
+                                                            <i class="fa-regular fa-plus"></i>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#about-wellfood">About Section</a></li>
+                                                            <li><a href="#why-choose">Why Choose Us</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-dropdown">
+                                                        <a href="#food-menu">
+                                                            Shop
+                                                            <i class="fa-regular fa-plus"></i>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#best-selling">Best Selling Dishes</a></li>
+                                                            <li><a href="#food-menu">Foods Menu</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-dropdown">
+                                                        <a href="#special-offer">
+                                                            Pages
+                                                            <i class="fa-regular fa-plus"></i>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#special-offer">Special Deal Offer</a></li>
+                                                            <li><a href="#testimonials">Testimonials</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#testimonials">
+                                                            Blog
+                                                            <i class="fa-regular fa-plus"></i>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#testimonials">Client Feedback</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#footer">
+                                                            Contact Us
+                                                            <i class="fa-regular fa-plus"></i>
+                                                        </a>
+                                                        <ul class="submenu">
+                                                            <li><a href="#footer">Footer Contact</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="header-right d-flex justify-content-end align-items-center">
+                                    <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a>
+                                    <div class="header__cart">
+                                        <a href="#"><i class="fa-sharp fa-regular fa-cart-shopping"></i></a>
+                                        <div class="header__right__dropdown__wrapper">
+                                            <div class="header__right__dropdown__inner">
+                                                <div class="single__header__right__dropdown">
+                                                    <div class="header__right__dropdown__img">
+                                                        <a href="#food-menu">
+                                                            <img src="assets/img/blog/blogRecentThumb3_1.png" alt="thumb">
+                                                        </a>
+                                                    </div>
+                                                    <div class="header__right__dropdown__content">
+                                                        <a href="#food-menu">Fried Chicken</a>
+                                                        <p>1 x <span class="price">$ 80.00</span></p>
+                                                    </div>
+                                                    <div class="header__right__dropdown__close">
+                                                        <a href="#"><i class="icofont-close-line"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="single__header__right__dropdown">
+                                                    <div class="header__right__dropdown__img">
+                                                        <a href="#food-menu">
+                                                            <img src="assets/img/blog/blogRecentThumb3_2.png" alt="thumb">
+                                                        </a>
+                                                    </div>
+                                                    <div class="header__right__dropdown__content">
+                                                        <a href="#food-menu">Fried Noodles</a>
+                                                        <p>1 x <span class="price">$ 60.00</span></p>
+                                                    </div>
+                                                    <div class="header__right__dropdown__close">
+                                                        <a href="#"><i class="icofont-close-line"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="single__header__right__dropdown">
+                                                    <div class="header__right__dropdown__img">
+                                                        <a href="#food-menu">
+                                                            <img src="assets/img/blog/blogRecentThumb3_3.png" alt="thumb">
+                                                        </a>
+                                                    </div>
+                                                    <div class="header__right__dropdown__content">
+                                                        <a href="#food-menu">Special Pasta</a>
+                                                        <p>1 x <span class="price">$ 70.00</span></p>
+                                                    </div>
+                                                    <div class="header__right__dropdown__close">
+                                                        <a href="#"><i class="icofont-close-line"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="dropdown__price">Total: <span>$1,100.00</span></p>
+                                            <div class="header__right__dropdown__button">
+                                                <a href="#food-menu" class="theme-btn mb-2">View Cart</a>
+                                                <a href="#food-menu" class="theme-btn style3">Checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="theme-btn" href="#food-menu">ORDER NOW <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                    <div class="header__hamburger d-xl-block my-auto">
+                                        <div class="sidebar__toggle">
+                                            <i class="fas fa-bars"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-wrap">
+        <div class="search-inner">
+            <i class="fas fa-times search-close" id="search-close"></i>
+            <div class="search-cell">
+                <form method="get" action="#">
+                    <div class="search-field-holder">
+                        <input type="search" class="main-search-input" placeholder="Search...">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="hero" class="banner-section fix">
+            <div class="slider-area">
+                <div class="swiper banner-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="banner-wrapper style1 bg-img">
+                                <div class="shape1_1 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_1.svg" alt="shape"></div>
+                                <div class="shape1_2 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_2.svg" alt="shape"></div>
+                                <div class="shape1_3 d-none d-xxl-block" data-animation="slideInLeft" data-duration="3s" data-delay="2s"><img src="assets/img/shape/bannerShape1_3.svg" alt="shape"></div>
+                                <div class="shape1_4 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_4.svg" alt="shape"></div>
+                                <div class="shape1_5 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_5.svg" alt="shape"></div>
+                                <div class="shape1_6 d-none d-xxl-block cir36"><img src="assets/img/shape/bannerShape1_6.svg" alt="shape"></div>
+                                <div class="overlay"></div>
+                                <div class="banner-container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 col-xxl-6">
+                                                <div class="banner-title-area">
+                                                    <div class="banner-style1">
+                                                        <div class="section-title">
+                                                            <h6 class="sub-title" data-animation="slideInRight" data-duration="2s" data-delay=".3s">WELCOME FRESHEAT</h6>
+                                                            <h1 class="title" data-animation="slideInRight" data-duration="2s" data-delay=".5s">SPICY FRIED CHICKEN</h1>
+                                                            <a class="theme-btn" href="#offer-cards" data-animation="slideInRight" data-duration="2s" data-delay=".7s">ORDER NOW <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-6 d-none d-xxl-block">
+                                                <div class="banner-thumb-area" data-tilt data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                                    <img src="assets/img/banner/bannerThumb1_1.png" alt="banner">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner-wrapper style1 bg-img">
+                                <div class="shape1_1 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_1.svg" alt="shape"></div>
+                                <div class="shape1_2 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_2.svg" alt="shape"></div>
+                                <div class="shape1_3 d-none d-xxl-block" data-animation="slideInLeft" data-duration="3s" data-delay="2s"><img src="assets/img/shape/bannerShape1_3.svg" alt="shape"></div>
+                                <div class="shape1_4 d-none d-xxl-block float-bob-x" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_4.svg" alt="shape"></div>
+                                <div class="shape1_5 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_5.svg" alt="shape"></div>
+                                <div class="shape1_6 d-none d-xxl-block cir36"><img src="assets/img/shape/bannerShape1_6.svg" alt="shape"></div>
+                                <div class="overlay"></div>
+                                <div class="banner-container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 col-xxl-6">
+                                                <div class="banner-title-area">
+                                                    <div class="banner-style1">
+                                                        <div class="section-title">
+                                                            <h6 class="sub-title" data-animation="slideInRight" data-duration="2s" data-delay=".3s">WELCOME FRESHEAT</h6>
+                                                            <h1 class="title" data-animation="slideInRight" data-duration="2s" data-delay=".5s">CHICAGO DEEP PIZZA KING</h1>
+                                                            <a class="theme-btn" href="#food-menu" data-animation="slideInRight" data-duration="2s" data-delay=".7s">ORDER NOW <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-6 d-none d-xxl-block">
+                                                <div class="banner-thumb-area" data-tilt data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                                    <img src="assets/img/banner/bannerThumb1_2.png" alt="banner">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner-wrapper style1 bg-img">
+                                <div class="shape1_1 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_1.svg" alt="shape"></div>
+                                <div class="shape1_2 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_2.svg" alt="shape"></div>
+                                <div class="shape1_3 d-none d-xxl-block" data-animation="slideInLeft" data-duration="3s" data-delay="2s"><img src="assets/img/shape/bannerShape1_3.svg" alt="shape"></div>
+                                <div class="shape1_4 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_4.svg" alt="shape"></div>
+                                <div class="shape1_5 d-none d-xxl-block" data-animation="slideInLeft" data-duration="2s" data-delay=".3s"><img src="assets/img/shape/bannerShape1_5.svg" alt="shape"></div>
+                                <div class="shape1_6 d-none d-xxl-block cir36"><img src="assets/img/shape/bannerShape1_6.svg" alt="shape"></div>
+                                <div class="overlay"></div>
+                                <div class="banner-container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 col-xxl-6">
+                                                <div class="banner-title-area">
+                                                    <div class="banner-style1">
+                                                        <div class="section-title">
+                                                            <h6 class="sub-title" data-animation="slideInRight" data-duration="2s" data-delay=".3s">WELCOME FRESHEAT</h6>
+                                                            <h1 class="title" data-animation="slideInRight" data-duration="2s" data-delay=".5s">CHICAGO DEEP BURGER KING</h1>
+                                                            <a class="theme-btn" href="#food-menu" data-animation="slideInRight" data-duration="2s" data-delay=".7s">ORDER NOW <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-6 d-none d-xxl-block">
+                                                <div class="banner-thumb-area" data-tilt data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                                    <img src="assets/img/banner/bannerThumb1_3.png" alt="banner">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-prev"><img src="assets/img/icon/arrowPrev.svg" alt="prev"></div>
+                    <div class="arrow-next"><img src="assets/img/icon/arrowNext.svg" alt="next"></div>
+                    <div class="pagination-class swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="popular-items" class="best-food-items-section fix section-padding bg-color2">
+            <div class="best-food-wrapper">
+                <div class="shape1 float-bob-y d-none d-xxl-block"><img src="assets/img/shape/bestFoodItemsShape1_1.png" alt="shape"></div>
+                <div class="shape2 float-bob-x d-none d-xxl-block"><img src="assets/img/shape/bestFoodItemsShape1_2.png" alt="shape"></div>
+                <div class="container">
+                    <div class="title-area">
+                        <div class="sub-title text-center wow fadeInUp" data-wow-delay="0.5s">
+                            <img class="me-1" src="assets/img/icon/titleIcon.svg" alt="icon">Best Food <img src="assets/img/icon/titleIcon.svg" alt="icon">
+                        </div>
+                        <h2 class="title wow fadeInUp" data-wow-delay="0.7s">Popular Food Items</h2>
+                    </div>
+                    <div class="slider-area mb-n40">
+                        <div class="swiper bestFoodItems-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="single-food-items">
+                                        <div class="item-thumb">
+                                            <img src="assets/img/food-items/item1_4.png" alt="Egg And Cucumber">
+                                            <div class="circle-shape"><img class="cir36" src="assets/img/food-items/circleShape.png" alt="shape"></div>
+                                        </div>
+                                        <div class="item-content">
+                                            <a href="#food-menu"><h3>Egg And Cucumber</h3></a>
+                                            <div class="text">The Registration Fee</div>
+                                            <h6>$28.00</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-food-items">
+                                        <div class="item-thumb">
+                                            <img src="assets/img/food-items/item1_2.png" alt="Chicken Fried Rice">
+                                            <div class="circle-shape"><img class="cir36" src="assets/img/food-items/circleShape.png" alt="shape"></div>
+                                        </div>
+                                        <div class="item-content">
+                                            <a href="#food-menu"><h3>Chicken Fried Rice</h3></a>
+                                            <div class="text">The Registration Fee</div>
+                                            <h6>$100.99</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-food-items">
+                                        <div class="item-thumb">
+                                            <img src="assets/img/food-items/item1_3.png" alt="Chicken Leg Piece">
+                                            <div class="circle-shape"><img class="cir36" src="assets/img/food-items/circleShape.png" alt="shape"></div>
+                                        </div>
+                                        <div class="item-content">
+                                            <a href="#food-menu"><h3>Chicken Leg Piece</h3></a>
+                                            <div class="text">The Registration Fee</div>
+                                            <h6>$20.99</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-food-items">
+                                        <div class="item-thumb">
+                                            <img src="assets/img/food-items/item1_1.png" alt="Chicken Pizza">
+                                            <div class="circle-shape"><img class="cir36" src="assets/img/food-items/circleShape.png" alt="shape"></div>
+                                        </div>
+                                        <div class="item-content">
+                                            <a href="#food-menu"><h3>Chicken Pizza</h3></a>
+                                            <div class="text">The Registration Fee</div>
+                                            <h6>$26.99</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bestFoodItems-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="offer-cards" class="offer-section fix bg-color2">
+            <div class="offer-wrapper">
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-lg-6 col-xl-4">
+                            <div class="offer-card style1 wow fadeInUp" data-wow-delay="0.2s" style="background-image: url(assets/img/bg/offerBG1_1.jpg);">
+                                <div class="offer-content">
+                                    <h6>ON THIS WEEK</h6>
+                                    <h3>SPICY FRIED CHICKEN</h3>
+                                    <p>limits Time Offer</p>
+                                    <a href="#food-menu" class="theme-btn style4">ORDER NOW <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                </div>
+                                <div class="offer-thumb">
+                                    <img class="thumbImg" src="assets/img/offer/offerThumb1_1.png" alt="offer">
+                                    <div class="shape float-bob-x"><img src="assets/img/shape/offerShape1_4.png" alt="shape"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-4">
+                            <div class="offer-card style1 wow fadeInUp" data-wow-delay="0.5s" style="background-image: url(assets/img/bg/offerBG1_1.jpg);">
+                                <div class="offer-content">
+                                    <h6>WELCOME FRESHEAT</h6>
+                                    <h3>TODAY SPACIAL FOOD</h3>
+                                    <p>limits Time Offer</p>
+                                    <a href="#food-menu" class="theme-btn style5">ORDER NOW <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                </div>
+                                <div class="offer-thumb">
+                                    <img class="thumbImg" src="assets/img/offer/offerThumb1_2.png" alt="offer">
+                                    <div class="shape float-bob-x"><img src="assets/img/shape/offerShape1_4.png" alt="shape"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-4">
+                            <div class="offer-card style1 wow fadeInUp" data-wow-delay="0.7s" style="background-image: url(assets/img/bg/offerBG1_1.jpg);">
+                                <div class="offer-content">
+                                    <h6>ON THIS WEEK</h6>
+                                    <h3>SPECIAL CHICKEN ROLL</h3>
+                                    <p>limits Time Offer</p>
+                                    <a href="#food-menu" class="theme-btn style4">ORDER NOW <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                                </div>
+                                <div class="offer-thumb">
+                                    <img class="thumbImg" src="assets/img/offer/offerThumb1_3.png" alt="offer">
+                                    <div class="shape float-bob-x"><img src="assets/img/shape/offerShape1_4.png" alt="shape"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="about-wellfood" class="wf-scope about-us-area pt-130 rpt-85 pb-100 rpb-70 rel z-1">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-6">
+                        <div class="about-image-part mb-30 rmb-55 rel">
+                            <div class="food-review">
+                                <div class="author">
+                                    <img class="review-author-img" src="assets/wellfood/images/about/review-author.png" alt="Author">
+                                </div>
+                                <span class="text">Very good food</span>
+                                <div class="ratting">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <img src="assets/wellfood/images/about/about.jpg" alt="About">
+                            <div class="quality-food" style="background-image: url(assets/wellfood/images/shapes/about-star.png)">
+                                <span class="text">quality <br>food</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-us-content">
+                            <div class="section-title mb-25">
+                                <span class="sub-title mb-5">learn About wellfood</span>
+                                <h2>the amazing &amp; Quality food for your good health</h2>
+                            </div>
+                            <p>Welcome too restaurant, where culinary excellence meets warm hospitality in every dish we serve. Nestled in the heart of City Name our eatery invites you on a journey</p>
+                            <div class="about-btn-author pt-5 mb-45 d-flex flex-wrap align-items-center gap-4">
+                                <a href="#why-choose" class="theme-btn style-two">learn more us <i class="far fa-arrow-alt-right"></i></a>
+                                <a href="#food-menu" class="read-more">Explore popular menu <i class="far fa-arrow-alt-right"></i></a>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="service-item style-two">
+                                        <div class="icon">
+                                            <i class="flaticon-high-quality"></i>
+                                        </div>
+                                        <h5><a href="#food-menu">Best Quality Food</a></h5>
+                                        <p>Our talented chefs craft each dish precision sourcing</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="service-item style-two">
+                                        <div class="icon">
+                                            <i class="flaticon-chef"></i>
+                                        </div>
+                                        <h5><a href="#food-menu">Experience our Chefs</a></h5>
+                                        <p>Our talented chefs craft each dish precision sourcing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-shapes">
+                <div class="shape one">
+                    <img src="assets/wellfood/images/shapes/pizza-three.png" alt="Shape">
+                </div>
+            </div>
+        </section>
+
+        <section id="special-offer" class="wf-scope offer-area bgc-black pt-160 rpt-100 pb-150 rpb-120 rel z-1" style="background-image: url(assets/wellfood/images/background/offer-dot-bg.png)">
+            <span class="marquee-wrap style-two text-white">
+               <span class="marquee-inner left">special deal</span>
+               <span class="marquee-inner left">special deal</span>
+               <span class="marquee-inner left">special deal</span>
+            </span>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="offer-content text-white rmb-55">
+                            <img src="assets/wellfood/images/offer/delicious.png" alt="Image">
+                            <h2>Special deal offer for this week</h2>
+                            <h3>grilled beef meat only <span>$59</span></h3>
+                            <p>Restaurant, where culinary excellence meets warm hospitality in every dish we serve nestled in the heart of city</p>
+                            <a href="#food-menu" class="theme-btn">order now <i class="far fa-arrow-alt-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="offer-image">
+                            <img src="assets/wellfood/images/offer/offer-img.png" alt="Offer">
+                            <div class="offer-badge" style="background-image: url(assets/wellfood/images/shapes/offer-circle-shape.png)">
+                                <span>only <br><span class="price">$59</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offer-shapes">
+                <div class="shape one">
+                    <img src="assets/wellfood/images/shapes/offer-shape1.png" alt="Shape">
+                </div>
+                <div class="shape two">
+                    <img src="assets/wellfood/images/shapes/offer-shape2.png" alt="Shape">
+                </div>
+                <div class="shape three">
+                    <img src="assets/wellfood/images/shapes/offer-shape3.png" alt="Shape">
+                </div>
+            </div>
+        </section>
+
+        <section id="best-selling" class="popular-dishes-section fix section-padding bg-color2">
+            <div class="popular-dishes-wrapper style1">
+                <div class="container">
+                    <div class="title-area">
+                        <div class="sub-title text-center wow fadeInUp" data-wow-delay="0.5s">
+                            <img class="me-1" src="assets/img/icon/titleIcon.svg" alt="icon">POPULAR DISHES<img class="ms-1" src="assets/img/icon/titleIcon.svg" alt="icon">
+                        </div>
+                        <h2 class="title wow fadeInUp" data-wow-delay="0.7s">Best Selling Dishes</h2>
+                    </div>
+                    <div class="dishes-card-wrap style1">
+                        <div class="dishes-card style1 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="dishes-thumb">
+                                <img src="assets/img/dishes/dishes1_1.png" alt="dish">
+                            </div>
+                            <a href="#food-menu"><h3>Chicken Fried Rice</h3></a>
+                            <p>The Registration Fee</p>
+                            <h6>$100.99</h6>
+                            <div class="social-profile">
+                                <span class="plus-btn"><a href="#"><i class="fa-regular fa-heart"></i></a></span>
+                                <ul>
+                                    <li><a href="#food-menu"><i class="fa-regular fa-basket-shopping-simple"></i></a></li>
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-light fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="dishes-card style1 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="social-profile">
+                                <span class="plus-btn"><a href="#"><i class="fa-regular fa-heart"></i></a></span>
+                                <ul>
+                                    <li><a href="#food-menu"><i class="fa-regular fa-basket-shopping-simple"></i></a></li>
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-light fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="dishes-thumb">
+                                <img src="assets/img/dishes/dishes1_2.png" alt="dish">
+                            </div>
+                            <a href="#food-menu"><h3>Chinese Pasta</h3></a>
+                            <p>The Registration Fee</p>
+                            <h6>$15.99</h6>
+                        </div>
+                        <div class="dishes-card style1 wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="social-profile">
+                                <span class="plus-btn"><a href="#"><i class="fa-regular fa-heart"></i></a></span>
+                                <ul>
+                                    <li><a href="#food-menu"><i class="fa-regular fa-basket-shopping-simple"></i></a></li>
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-light fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="dishes-thumb">
+                                <img src="assets/img/dishes/dishes1_3.png" alt="dish">
+                            </div>
+                            <a href="#food-menu"><h3>Chicken Pizza</h3></a>
+                            <p>The Registration Fee</p>
+                            <h6>$26.99</h6>
+                        </div>
+                        <div class="dishes-card style1 wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="social-profile">
+                                <span class="plus-btn"><a href="#"><i class="fa-regular fa-heart"></i></a></span>
+                                <ul>
+                                    <li><a href="#food-menu"><i class="fa-regular fa-basket-shopping-simple"></i></a></li>
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-light fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="dishes-thumb">
+                                <img src="assets/img/dishes/dishes1_4.png" alt="dish">
+                            </div>
+                            <a href="#food-menu"><h3>Chicken Noodles</h3></a>
+                            <p>The Registration Fee</p>
+                            <h6>$39.00</h6>
+                        </div>
+                        <div class="dishes-card style1 wow fadeInUp" data-wow-delay="0.9s">
+                            <div class="social-profile">
+                                <span class="plus-btn"><a href="#"><i class="fa-regular fa-heart"></i></a></span>
+                                <ul>
+                                    <li><a href="#food-menu"><i class="fa-regular fa-basket-shopping-simple"></i></a></li>
+                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-light fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="dishes-thumb">
+                                <img src="assets/img/dishes/dishes1_5.png" alt="dish">
+                            </div>
+                            <a href="#food-menu"><h3>Grilled Chicken</h3></a>
+                            <p>The Registration Fee</p>
+                            <h6>$20.99</h6>
+                        </div>
+                    </div>
+                    <div class="btn-wrapper wow fadeInUp" data-wow-delay="0.9s">
+                        <a class="theme-btn" href="#food-menu">VIEW ALL ITEM <i class="fa-sharp fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content pb-3 pe-3">
+                        <div class="modal-header border-0">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row gy-5">
+                                    <div class="col-xxl-6">
+                                        <div class="modal-thumb">
+                                            <div class="product-big-img bg-color2">
+                                                <div class="dishes-thumb">
+                                                    <img class="img-fluid" src="assets/img/dishes/dishes3_1.png" alt="thumb">
+                                                    <div class="circle-shape"><img class="cir36" src="assets/img/food-items/circleShape2.png" alt="shape"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-6">
+                                        <div class="modal-details">
+                                            <div class="product-about">
+                                                <div class="title-wrapper">
+                                                    <h2 class="product-title">Chicken Pizza</h2>
+                                                    <div class="price">$69</div>
+                                                </div>
+                                                <div class="product-rating">
+                                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+                                                        <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
+                                                    </div>
+                                                    <a href="#testimonials" class="woocommerce-review-link">(<span class="count">2</span> customer reviews)</a>
+                                                </div>
+                                                <p class="text">Aliquam hendrerit a augue insuscipit. Etiam aliquam massa quis des mauris commodo venenatis ligula commodo leez sed blandit convallis dignissim onec vel pellentesque neque.</p>
+                                                <div class="actions">
+                                                    <div class="quantity">
+                                                        <p>Quantity</p>
+                                                        <div class="qty-wrapper">
+                                                            <button class="quantity-plus qty-btn" type="button"><i class="fa-solid fa-plus"></i></button>
+                                                            <input type="number" class="qty-input" step="1" min="1" max="100" name="quantity" value="1" title="Qty">
+                                                            <button class="quantity-minus qty-btn" type="button"><i class="fa-solid fa-minus"></i></button>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#food-menu" class="theme-btn">Add to Cart<i class="fa-regular fa-cart-shopping bg-transparent text-white"></i></a>
+                                                    <a href="#" class="theme-btn style5 border-0">ADD TO wishlist<i class="fa-sharp fa-solid fa-heart"></i></a>
+                                                </div>
+                                                <div class="share">
+                                                    <h6>share with friends</h6>
+                                                    <ul class="social-media">
+                                                        <li><a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                                        <li><a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                                                        <li><a href="https://www.x.com"><i class="fa-brands fa-twitter"></i></a></li>
+                                                        <li><a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="food-menu" class="food-menu-section fix section-padding">
+            <div class="burger-shape">
+                <img src="assets/img/shape/burger-shape.png" alt="img">
+            </div>
+            <div class="fry-shape">
+                <img src="assets/img/shape/fry-shape.png" alt="img">
+            </div>
+            <div class="food-menu-wrapper style1">
+                <div class="container">
+                    <div class="food-menu-tab-wrapper style-bg">
+                        <div class="title-area">
+                            <div class="sub-title text-center wow fadeInUp" data-wow-delay="0.5s">
+                                <img class="me-1" src="assets/img/icon/titleIcon.svg" alt="icon">FOOD MENU<img class="ms-1" src="assets/img/icon/titleIcon.svg" alt="icon">
+                            </div>
+                            <h2 class="title wow fadeInUp" data-wow-delay="0.7s">Fresheat Foods Menu</h2>
+                        </div>
+
+                        <div class="food-menu-tab">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-FastFood-tab" data-bs-toggle="pill" data-bs-target="#pills-FastFood" type="button" role="tab" aria-controls="pills-FastFood" aria-selected="true"><img src="assets/img/menu/menuIcon1_1.png" alt="icon">Fast Food</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-drinkJuice-tab" data-bs-toggle="pill" data-bs-target="#pills-drinkJuice" type="button" role="tab" aria-controls="pills-drinkJuice" aria-selected="false"><img src="assets/img/menu/menuIcon1_2.png" alt="icon">Drink &amp; Juice</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-chickenPizza-tab" data-bs-toggle="pill" data-bs-target="#pills-chickenPizza" type="button" role="tab" aria-controls="pills-chickenPizza" aria-selected="false"><img src="assets/img/menu/menuIcon1_3.png" alt="icon">Chicken Pizza</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-freshPasta-tab" data-bs-toggle="pill" data-bs-target="#pills-freshPasta" type="button" role="tab" aria-controls="pills-freshPasta" aria-selected="false"><img src="assets/img/menu/menuIcon1_4.png" alt="icon">Fresh Pasta</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-FastFood" role="tabpanel" aria-labelledby="pills-FastFood-tab" tabindex="0">
+                                    <div class="row gx-60">
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_1.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3 class="active">Chinese Pasta</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$15.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_2.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chicken Fried Rice</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$25.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_3.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chicken Pizza</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$115.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_4.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chicken Noodles</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$154.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_5.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Grilled Chicken</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$55.99</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_6.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#popular-items"><h3>Egg And Cucumber</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$65.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_7.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chicken White Rice</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$135.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_8.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#hero"><h3>Spatial Barger</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$95.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_9.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Vegetables Burger</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$75.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_10.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Brief Chicken</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$44.99</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-drinkJuice" role="tabpanel" aria-labelledby="pills-drinkJuice-tab" tabindex="0">
+                                    <div class="row gx-60">
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_1.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chinese Pasta</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$15.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_2.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chicken Fried Rice</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$25.99</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_6.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#popular-items"><h3>Egg And Cucumber</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$65.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_10.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Brief Chicken</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$44.99</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-chickenPizza" role="tabpanel" aria-labelledby="pills-chickenPizza-tab" tabindex="0">
+                                    <div class="row gx-60">
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_3.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chicken Pizza</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$115.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_4.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chicken Noodles</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$154.99</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_8.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#hero"><h3>Spatial Barger</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$95.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_9.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Vegetables Burger</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$75.99</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-freshPasta" role="tabpanel" aria-labelledby="pills-freshPasta-tab" tabindex="0">
+                                    <div class="row gx-60">
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_1.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Chinese Pasta</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$15.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_5.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Grilled Chicken</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$55.99</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_6.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#popular-items"><h3>Egg And Cucumber</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$65.99</h6>
+                                            </div>
+                                            <div class="single-menu-items">
+                                                <div class="details">
+                                                    <div class="menu-item-thumb"><img src="assets/img/menu/menuThumb1_10.png" alt="thumb"></div>
+                                                    <div class="menu-content">
+                                                        <a href="#best-selling"><h3>Brief Chicken</h3></a>
+                                                        <p>It's a testament to our.</p>
+                                                    </div>
+                                                </div>
+                                                <h6>$44.99</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose" class="wf-scope why-choose-area bgc-lighter pt-240 rpt-150 pb-100 rpb-70 rel z-1">
+            <span class="marquee-wrap style-two">
+               <span class="marquee-inner left">Why choose Us</span>
+               <span class="marquee-inner left">Why choose Us</span>
+               <span class="marquee-inner left">Why choose Us</span>
+            </span>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="why-choose-content rmb-30">
+                            <div class="section-title mb-25">
+                                <span class="sub-title mb-5">Why choose us</span>
+                                <h2>We Offer quality service That Customers Needs</h2>
+                            </div>
+                            <p>Welcome too restaurant, where culinary excellence meets warm hospitality in every dish we serve. Nestled in the heart of City Name our eatery invites you on a journey</p>
+                            <div class="about-btn-author mb-60 d-flex flex-wrap align-items-center gap-4">
+                                <a href="#footer" class="theme-btn">learn more us <i class="far fa-arrow-alt-right"></i></a>
+                                <div class="author d-flex align-items-center gap-3">
+                                    <img src="assets/wellfood/images/about/author.jpg" alt="Author">
+                                    <h6>Ben A. Conners / <span>CEO &amp; Founder</span></h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 col-6">
+                                    <div class="counter-item">
+                                        <span class="count-text">34K+</span>
+                                        <span class="counter-title">Organic Planting</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-6">
+                                    <div class="counter-item">
+                                        <span class="count-text">356+</span>
+                                        <span class="counter-title">Passionate Chef's</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-6">
+                                    <div class="counter-item">
+                                        <span class="count-text">853+</span>
+                                        <span class="counter-title">Favourite Dishes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="service-item">
+                                    <div class="icon">
+                                        <i class="flaticon-recommended-food"></i>
+                                    </div>
+                                    <h4><a href="#food-menu">Best Quality Food</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis este natus sit voluptatem</p>
+                                </div>
+                                <div class="service-item">
+                                    <div class="icon">
+                                        <i class="flaticon-fast-delivery"></i>
+                                    </div>
+                                    <h4><a href="#footer">Fast Food Delivery</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis este natus sit voluptatem</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="service-item mt-30 rmt-0">
+                                    <div class="icon">
+                                        <i class="flaticon-cashback"></i>
+                                    </div>
+                                    <h4><a href="#footer">Money Back Guarantee</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis este natus sit voluptatem</p>
+                                </div>
+                                <div class="service-item">
+                                    <div class="icon">
+                                        <i class="flaticon-dish"></i>
+                                    </div>
+                                    <h4><a href="#food-menu">100% Natural Food</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis este natus sit voluptatem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="headline-shapes">
+                <div class="shape one">
+                    <img src="assets/wellfood/images/shapes/chillies.png" alt="Shape">
+                </div>
+                <div class="shape two">
+                    <img src="assets/wellfood/images/shapes/tomato.png" alt="Shape">
+                </div>
+                <div class="shape three">
+                    <img src="assets/wellfood/images/shapes/pizza.png" alt="Shape">
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonial-section fix bg-color3">
+            <div class="testimonial-wrapper style1 section-padding">
+                <div class="shape"><img src="assets/img/testimonial/testimonialThumb1_1.png" alt="thumb"></div>
+                <div class="shape2"><img src="assets/img/shape/testimonialShape1_1.png" alt="shape"></div>
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-5 d-flex align-items-center justify-content-center">
+                            <div class="video-wrap cir36">
+                                <a href="https://www.youtube.com/watch?v=f2Gzr8sAGB8" class="play-btn popup-video"><img src="assets/img/shape/player.svg" alt="icon"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7">
+                            <div class="title-area">
+                                <div class="sub-title text-center wow fadeInUp" data-wow-delay="0.5s">
+                                    <img class="me-1" src="assets/img/icon/titleIcon.svg" alt="icon">Testimonials<img class="ms-1" src="assets/img/icon/titleIcon.svg" alt="icon">
+                                </div>
+                                <h2 class="title text-white wow fadeInUp" data-wow-delay="0.7s">What Our Clients Say</h2>
+                            </div>
+                            <div class="slider-area">
+                                <div class="swiper testmonialSliderOne">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-card style1">
+                                                <div class="testimonial-header">
+                                                    <div class="fancy-box">
+                                                        <div class="item1"><img src="assets/img/testimonial/testimonialProfile1_1.png" alt="thumb"></div>
+                                                        <div class="item2">
+                                                            <h6>Albert Flores</h6>
+                                                            <p>Web Designer</p>
+                                                            <div class="icon"><img src="assets/img/icon/star.svg" alt="icon"></div>
+                                                        </div>
+                                                        <div class="quote"><img src="assets/img/icon/quote.svg" alt="icon"></div>
+                                                    </div>
+                                                </div>
+                                                <p>Penatibus magnis dis point parturient montes nascetur ridiculus mus Ut id lorem ac enim the vestibulum blandit nec sit amet felis. Fusce quis diam odio Cras mattis mi quis tincidunt</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-card style1">
+                                                <div class="testimonial-header">
+                                                    <div class="fancy-box">
+                                                        <div class="item1"><img src="assets/img/testimonial/testimonialProfile1_1.png" alt="thumb"></div>
+                                                        <div class="item2">
+                                                            <h6>Albert Flores</h6>
+                                                            <p>Web Designer</p>
+                                                            <div class="icon"><img src="assets/img/icon/star.svg" alt="icon"></div>
+                                                        </div>
+                                                        <div class="quote"><img src="assets/img/icon/quote.svg" alt="icon"></div>
+                                                    </div>
+                                                </div>
+                                                <p>Penatibus magnis dis point parturient montes nascetur ridiculus mus Ut id lorem ac enim the vestibulum blandit nec sit amet felis. Fusce quis diam odio Cras mattis mi quis tincidunt</p>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="testimonial-card style1">
+                                                <div class="testimonial-header">
+                                                    <div class="fancy-box">
+                                                        <div class="item1"><img src="assets/img/testimonial/testimonialProfile1_1.png" alt="thumb"></div>
+                                                        <div class="item2">
+                                                            <h6>Albert Flores</h6>
+                                                            <p>Web Designer</p>
+                                                            <div class="icon"><img src="assets/img/icon/star.svg" alt="icon"></div>
+                                                        </div>
+                                                        <div class="quote"><img src="assets/img/icon/quote.svg" alt="icon"></div>
+                                                    </div>
+                                                </div>
+                                                <p>Penatibus magnis dis point parturient montes nascetur ridiculus mus Ut id lorem ac enim the vestibulum blandit nec sit amet felis. Fusce quis diam odio Cras mattis mi quis tincidunt</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <div class="arrow-prev"><i class="fa-regular fa-arrow-left"></i></div>
+                    <div class="arrow-next"><i class="fa-regular fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer-section bg-title fix">
+        <div class="footer-widgets-wrapper">
+            <div class="shape1 float-bob-y d-none d-xxl-block"><img src="assets/img/shape/footerShape1_1.png" alt="shape"></div>
+            <div class="shape2 d-none d-xxl-block"><img src="assets/img/shape/footerShape1_2.png" alt="shape"></div>
+            <div class="shape3 d-none d-xxl-block"><img src="assets/img/shape/footerShape1_3.png" alt="shape"></div>
+            <div class="shape4 d-none d-xxl-block"><img src="assets/img/shape/footerShape1_4.png" alt="shape"></div>
+            <div class="container">
+                <div class="footer-top">
+                    <div class="row gy-4">
+                        <div class="col-lg-4">
+                            <div class="fancy-box">
+                                <div class="item1"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="item2">
+                                    <h6>address</h6>
+                                    <p>4648 Rocky Road Philadelphia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex justify-content-start justify-content-lg-end">
+                            <div class="fancy-box">
+                                <div class="item1"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="item2">
+                                    <h6>send email</h6>
+                                    <p>info@exmple.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex justify-content-start justify-content-lg-end">
+                            <div class="fancy-box">
+                                <div class="item1"><i class="fa-regular fa-phone-volume"></i></div>
+                                <div class="item2">
+                                    <h6>call emergency</h6>
+                                    <p>+88 0123 654 99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="single-footer-widget">
+                            <div class="widget-head">
+                                <a href="#hero">
+                                    <img src="assets/img/logo/logoWhite.svg" alt="logo">
+                                </a>
+                            </div>
+                            <div class="footer-content">
+                                <p>Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a lacinia curabitur lacinia mollis</p>
+                                <div class="social-icon d-flex align-items-center">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 ps-xl-5 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="single-footer-widget">
+                            <div class="widget-head">
+                                <h3>Quick Links</h3>
+                            </div>
+                            <ul class="list-area">
+                                <li><a href="#about-wellfood"><i class="fa-solid fa-chevrons-right"></i>About Us</a></li>
+                                <li><a href="#popular-items"><i class="fa-solid fa-chevrons-right"></i>Our Gallery</a></li>
+                                <li><a href="#testimonials"><i class="fa-solid fa-chevrons-right"></i>Our Blogs</a></li>
+                                <li><a href="#why-choose"><i class="fa-solid fa-chevrons-right"></i>FAQ'S</a></li>
+                                <li><a href="#footer"><i class="fa-solid fa-chevrons-right"></i>Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 ps-xl-5 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="single-footer-widget">
+                            <div class="widget-head">
+                                <h3>Our Menu</h3>
+                            </div>
+                            <ul class="list-area">
+                                <li><a href="#hero"><i class="fa-solid fa-chevrons-right"></i>Burger King</a></li>
+                                <li><a href="#hero"><i class="fa-solid fa-chevrons-right"></i>Pizza king</a></li>
+                                <li><a href="#food-menu"><i class="fa-solid fa-chevrons-right"></i>Fresh Food</a></li>
+                                <li><a href="#food-menu"><i class="fa-solid fa-chevrons-right"></i>Vegetable</a></li>
+                                <li><a href="#food-menu"><i class="fa-solid fa-chevrons-right"></i>Desserts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 ps-xl-5 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="single-footer-widget">
+                            <div class="widget-head">
+                                <h3>Contact Us</h3>
+                            </div>
+                            <ul class="list-area">
+                                <li class="mb-2">Monday - Friday: <span class="text-theme-color2">8am - 4pm</span></li>
+                                <li>Saturday: <span class="text-theme-color2">8am - 12am</span></li>
+                            </ul>
+                            <form action="#" class="mt-4">
+                                <div class="form-control">
+                                    <input class="email" type="email" placeholder="Your email address">
+                                    <button type="submit" class="submit-btn"><i class="fa-solid fa-arrow-right-long"></i></button>
+                                </div>
+                                <div class="form-control style2 mt-3">
+                                    <input id="checkbox" name="checkbox" type="checkbox">
+                                    <label for="checkbox">I agree to the <a href="#footer">Privacy Policy.</a></label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-wrapper d-flex align-items-center justify-content-between">
+                    <p class="wow fadeInLeft" data-wow-delay=".3s">&copy; All Copyright 2024 by <a href="#hero">FreshEat</a></p>
+                    <ul class="brand-logo wow fadeInRight" data-wow-delay=".5s">
+                        <li><a class="text-white" href="#footer">Terms &amp; Condition</a></li>
+                        <li><a class="text-white" href="#footer">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/tilt.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/nice-select.min.js"></script>
+    <script src="assets/js/contact.form.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
