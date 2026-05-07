@@ -77,6 +77,19 @@
     }
 }
 
+// Decorative side graphics removed to prevent lower-section layout overlap.
+.popular-dishes-wrapper {
+    &.style1,
+    &.style2,
+    &.style3,
+    &.style4 {
+        .shape1,
+        .shape2 {
+            display: none !important;
+        }
+    }
+}
+
 
 .dishes-card-wrap {
     &.style1 {

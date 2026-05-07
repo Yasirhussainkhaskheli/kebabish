@@ -279,6 +279,38 @@
     }
 }
 
+// Remove decorative banner shape assets across homepage banner variants.
+.banner-wrapper.style1 {
+    .shape1_1,
+    .shape1_2,
+    .shape1_3,
+    .shape1_4,
+    .shape1_5,
+    .shape1_6 {
+        display: none !important;
+    }
+}
+
+.banner-wrapper.style2 {
+    .shape1_1,
+    .shape1_2,
+    .shape1_3,
+    .shape1_4,
+    .shape1_5,
+    .shape1_6 {
+        display: none !important;
+    }
+}
+
+.banner-wrapper.style3 {
+    .shape1,
+    .shape2,
+    .shape3,
+    .shape4 {
+        display: none !important;
+    }
+}
+
 
 .banner-title-area {
     position: relative;

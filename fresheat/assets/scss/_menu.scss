@@ -32,6 +32,13 @@
     }
 }
 
+.food-menu-section {
+    .burger-shape,
+    .fry-shape {
+        display: none !important;
+    }
+}
+
 .food-menu-tab-wrapper {
     &.style-bg {
         background-color: $white;

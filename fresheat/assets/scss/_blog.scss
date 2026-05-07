@@ -102,6 +102,13 @@
         }
     }
 }
+
+.blog-section {
+    .burger-shape,
+    .pizza-shape {
+        display: none !important;
+    }
+}
  
 
 .blog-card-wrap {

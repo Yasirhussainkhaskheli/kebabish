@@ -56,6 +56,19 @@
         white-space: nowrap;
       }
 
+      .header-section .main-menu .navigation > li > a {
+        font-size: 28px;
+        line-height: 1.1;
+      }
+
+      .main-header .logo img,
+      .main-header .mobile-logo img {
+        width: 110px;
+        max-width: 110px;
+        max-height: 110px;
+        height: auto;
+      }
+
       .wf-scope {
         position: relative;
         font-family: "Roboto", sans-serif;
@@ -347,6 +360,110 @@
       .wf-scope .offer-shapes .shape,
       .wf-scope .about-shapes .shape {
         pointer-events: none;
+      }
+
+      .best-food-wrapper .shape1,
+      .best-food-wrapper .shape2,
+      .food-menu-section .burger-shape,
+      .food-menu-section .fry-shape,
+      .wf-scope .about-shapes,
+      .wf-scope .headline-shapes,
+      .wf-scope .offer-shapes,
+      .testimonial-wrapper.style1 .shape2 {
+        display: none !important;
+      }
+
+      .food-menu-wrapper.style1 > .container {
+        max-width: 100%;
+      }
+
+      .banner-wrapper.style1 .shape1_3 {
+        display: none !important;
+      }
+
+      .banner-wrapper.style1 .shape1_1 {
+        display: none !important;
+      }
+
+      .banner-slider .swiper-pagination {
+        top: auto !important;
+        bottom: 28px !important;
+        left: 50% !important;
+        z-index: 20 !important;
+        width: auto !important;
+        transform: translateX(-50%) !important;
+        transform-origin: center center !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .banner-slider .swiper-pagination-bullet {
+        margin: 0 12px !important;
+      }
+
+      .banner-slider .arrow-prev,
+      .banner-slider .arrow-next {
+        top: auto !important;
+        bottom: 24px !important;
+        left: auto !important;
+        z-index: 21 !important;
+        display: block !important;
+      }
+
+      .banner-slider .arrow-prev {
+        right: calc(50% + 70px) !important;
+      }
+
+      .banner-slider .arrow-next {
+        left: calc(50% + 70px) !important;
+      }
+
+      .banner-slider .arrow-prev img,
+      .banner-slider .arrow-next img {
+        width: 18px;
+        height: auto;
+      }
+
+      .banner-style1 .section-title .banner-copy,
+      .banner-style1 .section-title .banner-price {
+        position: relative;
+        z-index: 99999999;
+      }
+
+      .banner-style1 .section-title .banner-copy {
+        max-width: 560px;
+        margin: 18px 0 14px;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .banner-style1 .section-title .banner-price {
+        margin-bottom: 24px;
+        color: #ffb338;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 34px;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .banner-container .row {
+        align-items: center;
+      }
+
+      .banner-wrapper.style1 .banner-thumb-area {
+        margin-top: 0 !important;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .banner-wrapper.style1 .banner-thumb-area img {
+        display: block;
+        margin: 0 auto;
       }
 
       @media (max-width: 1199.98px) {
@@ -727,7 +844,7 @@
                                   data-duration="2s"
                                   data-delay=".3s"
                                 >
-                                  WELCOME TO KEBABISH
+                                  Welcome to Kebabish Original
                                 </h6>
                                 <h1
                                   class="title"
@@ -735,15 +852,34 @@
                                   data-duration="2s"
                                   data-delay=".5s"
                                 >
-                                  AUTHENTIC FLAVOURS, FRESHLY SERVED
+                                  THE THRILL OF THE GRILL
                                 </h1>
+                                <p
+                                  class="banner-copy"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".6s"
+                                >
+                                  Hand-marinated meats seared over high-heat
+                                  charcoal — a true feast for the senses. The
+                                  iconic Kebabish grill, as it was meant to be
+                                  experienced.
+                                </p>
+                                <div
+                                  class="banner-price"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".65s"
+                                >
+                                  FROM ONLY £6.95
+                                </div>
                                 <a
                                   class="theme-btn"
-                                  href="#offer-cards"
+                                  href="#food-menu"
                                   data-animation="slideInRight"
                                   data-duration="2s"
                                   data-delay=".7s"
-                                  >ORDER NOW
+                                  >EXPLORE MENU
                                   <i
                                     class="fa-sharp fa-regular fa-arrow-right"
                                   ></i
@@ -761,8 +897,8 @@
                             data-delay=".9s"
                           >
                             <img
-                              src="https://gramentheme.com/html/fresheat/assets/img/banner/bannerThumb1_1.png"
-                              alt="banner"
+                              src="assets/img/banner/hero-slide-1.png"
+                              alt="The Thrill of the Grill"
                             />
                           </div>
                         </div>
@@ -849,7 +985,7 @@
                                   data-duration="2s"
                                   data-delay=".3s"
                                 >
-                                  MADE FOR SHARING
+                                  Award-Winning Speciality
                                 </h6>
                                 <h1
                                   class="title"
@@ -857,8 +993,26 @@
                                   data-duration="2s"
                                   data-delay=".5s"
                                 >
-                                  BOLD SPICES, BIG FLAVOURS
+                                  TANDOORI LAMB CHOPS
                                 </h1>
+                                <p
+                                  class="banner-copy"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".6s"
+                                >
+                                  Marinated overnight in rich, spiced yogurt and
+                                  traditional tandoori masalas — then grilled to
+                                  smoky perfection. Blackburn's most loved dish.
+                                </p>
+                                <div
+                                  class="banner-price"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".65s"
+                                >
+                                  ONLY £7.95
+                                </div>
                                 <a
                                   class="theme-btn"
                                   href="#food-menu"
@@ -883,8 +1037,149 @@
                             data-delay=".9s"
                           >
                             <img
-                              src="https://gramentheme.com/html/fresheat/assets/img/banner/bannerThumb1_3.png"
-                              alt="banner"
+                              src="assets/img/banner/hero-slide-2.png"
+                              alt="Tandoori Lamb Chops"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="banner-wrapper style1 bg-img">
+                  <div
+                    class="shape1_1 d-none d-xxl-block"
+                    data-animation="slideInLeft"
+                    data-duration="2s"
+                    data-delay=".3s"
+                  >
+                    <img
+                      src="assets/img/shape/bannerShape1_1.svg"
+                      alt="shape"
+                    />
+                  </div>
+                  <div
+                    class="shape1_2 d-none d-xxl-block"
+                    data-animation="slideInLeft"
+                    data-duration="2s"
+                    data-delay=".3s"
+                  >
+                    <img
+                      src="assets/img/shape/bannerShape1_2.svg"
+                      alt="shape"
+                    />
+                  </div>
+                  <div
+                    class="shape1_3 d-none d-xxl-block"
+                    data-animation="slideInLeft"
+                    data-duration="3s"
+                    data-delay="2s"
+                  >
+                    <img
+                      src="assets/img/shape/bannerShape1_3.svg"
+                      alt="shape"
+                    />
+                  </div>
+                  <div
+                    class="shape1_4 d-none d-xxl-block"
+                    data-animation="slideInLeft"
+                    data-duration="2s"
+                    data-delay=".3s"
+                  >
+                    <img
+                      src="assets/img/shape/bannerShape1_4.svg"
+                      alt="shape"
+                    />
+                  </div>
+                  <div
+                    class="shape1_5 d-none d-xxl-block"
+                    data-animation="slideInLeft"
+                    data-duration="2s"
+                    data-delay=".3s"
+                  >
+                    <img
+                      src="assets/img/shape/bannerShape1_5.svg"
+                      alt="shape"
+                    />
+                  </div>
+                  <div class="shape1_6 d-none d-xxl-block cir36">
+                    <img
+                      src="assets/img/shape/bannerShape1_6.svg"
+                      alt="shape"
+                    />
+                  </div>
+                  <div class="overlay"></div>
+                  <div class="banner-container">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-12 col-xxl-6">
+                          <div class="banner-title-area">
+                            <div class="banner-style1">
+                              <div class="section-title">
+                                <h6
+                                  class="sub-title"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".3s"
+                                >
+                                  The Mega Karahi Experience
+                                </h6>
+                                <h1
+                                  class="title"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".5s"
+                                >
+                                  THE MEGA KARAHI
+                                </h1>
+                                <p
+                                  class="banner-copy"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".6s"
+                                >
+                                  Our legendary Pakhtooni VIP Karahi —
+                                  slow-cooked on the bone in a rich Punjabi
+                                  sauce, served sizzling hot. Available in ½kg
+                                  or 1kg portions.
+                                </p>
+                                <div
+                                  class="banner-price"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".65s"
+                                >
+                                  FROM £15.95
+                                </div>
+                                <a
+                                  class="theme-btn"
+                                  href="#food-menu"
+                                  data-animation="slideInRight"
+                                  data-duration="2s"
+                                  data-delay=".7s"
+                                  >VIEW KARAHIS
+                                  <i
+                                    class="fa-sharp fa-regular fa-arrow-right"
+                                  ></i
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-xl-6 d-none d-xxl-block">
+                          <div
+                            class="banner-thumb-area"
+                            data-tilt
+                            data-animation="slideInRight"
+                            data-duration="2s"
+                            data-delay=".9s"
+                          >
+                            <img
+                              src="assets/img/banner/hero-slide-3.png"
+                              alt="The Mega Karahi"
                             />
                           </div>
                         </div>
@@ -1243,10 +1538,9 @@
             <div class="col-lg-6">
               <div class="offer-content text-white rmb-55">
                 <h2>Special deal offer for this week</h2>
-                <h3>Tandoori lamb chops only <span>&pound;7.95</span></h3>
+                <h3>LAMB SHANK CURRY ONLY <span>&pound;15.95</span></h3>
                 <p>
-                  Marinated overnight in spiced yogurt and tandoori masalas,
-                  then grilled until smoky, tender and full of Kebabish flavour.
+                 Slow-cooked to perfection, our Lamb Shank Curry is the ultimate comfort dish. A tender, fall-off-the-bone shank bathed in a rich, deeply spiced curry sauce, aromatic, hearty and packed with authentic Kebabish flavour. A true showstopper on any table.
                 </p>
                 <a href="#food-menu" class="theme-btn"
                   >order now <i class="far fa-arrow-alt-right"></i
@@ -1256,17 +1550,10 @@
             <div class="col-lg-6">
               <div class="offer-image">
                 <img
-                  src="https://wellfood.starplatethemes.com/assets/images/offer/offer-img.png"
+                  src="assets/img/offer/special-offer-lamb.png"
                   alt="Offer"
                 />
-                <div
-                  class="offer-badge"
-                  style="
-                    background-image: url(assets/wellfood/images/shapes/offer-circle-shape.png);
-                  "
-                >
-                  <span>only <br /><span class="price">&pound;7.95</span></span>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -2203,10 +2490,7 @@
                     >learn more us <i class="far fa-arrow-alt-right"></i
                   ></a>
                   <div class="author d-flex align-items-center gap-3">
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-                      alt="Author"
-                    />
+                  
                     <h6>
                       The Kebabish Team / <span>Chefs &amp; Founders</span>
                     </h6>
@@ -2215,19 +2499,19 @@
                 <div class="row">
                   <div class="col-sm-4 col-6">
                     <div class="counter-item">
-                      <span class="count-text">15+</span>
+                      <span class="count-text">18+</span>
                       <span class="counter-title">Years Serving</span>
                     </div>
                   </div>
                   <div class="col-sm-4 col-6">
                     <div class="counter-item">
-                      <span class="count-text">50K+</span>
+                      <span class="count-text">2K+</span>
                       <span class="counter-title">Happy Customers</span>
                     </div>
                   </div>
                   <div class="col-sm-4 col-6">
                     <div class="counter-item">
-                      <span class="count-text">80+</span>
+                      <span class="count-text">20+</span>
                       <span class="counter-title">Favourite Dishes</span>
                     </div>
                   </div>
@@ -2345,8 +2629,8 @@
                                 />
                               </div>
                               <div class="item2">
-                                <h6>Ahmed Khan</h6>
-                                <p>Local Foodie, Blackburn</p>
+                                <h6>I Ahmed</h6>
+                                <p>Google Review</p>
                                 <div class="icon">
                                   <img
                                     src="assets/img/icon/star.svg"
@@ -2363,9 +2647,15 @@
                             </div>
                           </div>
                           <p>
-                            The seek kebab lamb is smoky, juicy and perfectly
-                            spiced. Kebabish Original Blackburn never
-                            disappoints.
+                            Absolutely amazing food! This is my go to
+                            restaurant for family and friends. The food is
+                            consistently amazing. Delicious authentic Pakistani
+                            food. There is plenty of indoor seating in a family
+                            friendly environment. The staff are superhardworking
+                            and the prices are very generous. If you're looking
+                            for a tasty day out with family and friends, this
+                            place can't be beat! Would definitely recommend
+                            10/10.
                           </p>
                         </div>
                       </div>
@@ -2380,8 +2670,8 @@
                                 />
                               </div>
                               <div class="item2">
-                                <h6>Sarah Mahmood</h6>
-                                <p>Google Review, 5 Stars</p>
+                                <h6>Elliot Downing-Khan</h6>
+                                <p>Google Review</p>
                                 <div class="icon">
                                   <img
                                     src="assets/img/icon/star.svg"
@@ -2398,9 +2688,11 @@
                             </div>
                           </div>
                           <p>
-                            We came for a family birthday dinner and the mega
-                            karahi was out of this world. The service was
-                            fantastic and the flavours felt truly authentic.
+                            I really enjoyed the lamb shank. However, I ordered
+                            it spicy and it wasn't that spicy. We both liked
+                            that it was fully halal. My wife ordered the butter
+                            chicken and she thought that it was one of the best
+                            examples of the dish that she has had.
                           </p>
                         </div>
                       </div>
@@ -2415,8 +2707,8 @@
                                 />
                               </div>
                               <div class="item2">
-                                <h6>James Thornton</h6>
-                                <p>TripAdvisor Reviewer</p>
+                                <h6>Moh K</h6>
+                                <p>Google Review</p>
                                 <div class="icon">
                                   <img
                                     src="assets/img/icon/star.svg"
@@ -2433,9 +2725,16 @@
                             </div>
                           </div>
                           <p>
-                            The mix grill for three is incredible value and
-                            absolutely delicious. The tandoori lamb chops were
-                            tender, smoky and full of flavour.
+                            Food is really nice, the best thing about this
+                            restaurant is the prayer room, the downside is the
+                            staff who are a bit slow and not attentive. Staff
+                            needs to be re-trained and more focus on the
+                            customers. They bring the food first then the
+                            cutlery which is a bit odd, on some occasions had to
+                            remind staff multiple times to get the things needed
+                            on the table, as they keep forgetting the first time
+                            as simple as just bringing glasses or spoons.
+                            Overall the food and atmosphere is very nice.
                           </p>
                         </div>
                       </div>
